@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Preoperative Investigation Advisor</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Preoperative Investigation Advisor</h1>
+<p class="subtitle">Patient Information</p>
+
+<form id="patientForm">
+
+<div class="card">
+
+<label>Age (years)</label>
+<input type="number" id="age" min="0" max="120" placeholder="Enter age">
+
+<label>Sex</label>
+<div class="radio-group">
+<label><input type="radio" name="sex" value="Male"> Male</label>
+<label><input type="radio" name="sex" value="Female"> Female</label>
+</div>
+
+<label>Weight (kg)</label>
+<input type="number" id="weight" placeholder="Enter weight">
+
+<label>Height (cm)</label>
+<input type="number" id="height" placeholder="Enter height">
+
+<label>ASA Physical Status</label>
+
+<select id="asa">
+
+<option value="">Select ASA</option>
+
+<option>ASA I</option>
+<option>ASA II</option>
+<option>ASA III</option>
+<option>ASA IV</option>
+<option>ASA V</option>
+<option>ASA VI</option>
+
+</select>
+
+<h3>Comorbidities</h3>
+
+<div class="checkboxes">
+
+<label><input type="checkbox"> Diabetes Mellitus</label>
+
+<label><input type="checkbox"> Hypertension</label>
+
+<label><input type="checkbox"> Ischemic Heart Disease</label>
+
+<label><input type="checkbox"> Heart Failure</label>
+
+<label><input type="checkbox"> Chronic Kidney Disease</label>
+
+<label><input type="checkbox"> Liver Disease</label>
+
+<label><input type="checkbox"> COPD</label>
+
+<label><input type="checkbox"> Asthma</label>
+
+<label><input type="checkbox"> Thyroid Disease</label>
+
+<label><input type="checkbox"> Anticoagulant / Antiplatelet Therapy</label>
+
+<label><input type="checkbox"> Chemotherapy</label>
+
+<label><input type="checkbox"> Active Malignancy</label>
+
+<label><input type="checkbox"> Pregnancy</label>
+
+<label><input type="checkbox"> Smoking</label>
+
+<label><input type="checkbox"> Obstructive Sleep Apnea</label>
+
+</div>
+
+<button type="button" id="nextBtn">
+Next →
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
