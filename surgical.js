@@ -19,3 +19,8 @@ return;
 alert("Surgical information saved.");
 
 });
+document.getElementById("nextBtn").addEventListener("click", function () {
+
+    window.location.href = "investigations.html";
+
+});
