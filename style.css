@@ -37,7 +37,7 @@ select,
     background:#fff;
 }
 .radio-group{
-     text-align:center;
+    justify-content:center;
     display:flex;
     gap:30px;
     align-items:center;
