@@ -47,3 +47,10 @@ document.getElementById("dropdown").style.display="none";
 }
 
 }
+document.getElementById("nextBtn").addEventListener("click", function () {
+
+    // اینجا بعداً اعتبارسنجی اطلاعات را انجام می‌دهیم
+
+    window.location.href = "surgical.html";
+
+});
