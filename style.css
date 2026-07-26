@@ -9,6 +9,7 @@
     font-size:24px;
 }
 .card label{
+    text-align:center;
     display:block;
     margin-top:18px;
     margin-bottom:8px;
