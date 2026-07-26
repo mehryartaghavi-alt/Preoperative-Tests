@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Surgical Information</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Preoperative Investigation Advisor</h1>
+
+<h2 class="subtitle">Surgical Information</h2>
+
+<div class="card">
+
+<label>Surgical Type</label>
+
+<select id="surgicalType">
+
+<option value="">Select Surgical Type</option>
+
+<option>General Surgery</option>
+<option>Orthopedic Surgery</option>
+<option>Neurosurgery</option>
+<option>Cardiac Surgery</option>
+<option>Thoracic Surgery</option>
+<option>Vascular Surgery</option>
+<option>Urologic Surgery</option>
+<option>Gynecologic Surgery</option>
+<option>Obstetric Surgery</option>
+<option>ENT Surgery</option>
+<option>Ophthalmic Surgery</option>
+<option>Plastic Surgery</option>
+<option>Pediatric Surgery</option>
+<option>Transplant Surgery</option>
+<option>Other</option>
+
+</select>
+
+<label>Surgical Grade</label>
+
+<select id="grade">
+
+<option value="">Select Grade</option>
+
+<option>Minor</option>
+<option>Intermediate</option>
+<option>Major</option>
+
+</select>
+
+<label>Expected Blood Loss</label>
+
+<select id="bloodLoss">
+
+<option value="">Select Blood Loss</option>
+
+<option>Low (100–500 mL)</option>
+<option>Moderate (500–1000 mL)</option>
+<option>High (>1000 mL)</option>
+
+</select>
+
+<label>Surgical Urgency</label>
+
+<select id="urgency">
+
+<option value="">Select Urgency</option>
+
+<option>Elective</option>
+<option>Urgent</option>
+<option>Emergency</option>
+
+</select>
+
+<div class="button-group">
+
+<button type="button" onclick="history.back()">← Back</button>
+
+<button type="button" id="nextBtn">Next →</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script2.js"></script>
+
+</body>
+
+</html>
