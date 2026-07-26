@@ -26,6 +26,8 @@ input,
 select,
 .select-btn{
     width:50%;
+    display:block;
+    margin:0 auto;
     padding:12px;
     border:1px solid #cfd8dc;
     border-radius:10px;
