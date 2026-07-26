@@ -26,7 +26,11 @@ select,
     font-size:16px;
     background:#fff;
 }
-
+.radio-group{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
 .multi-select{
     position:relative;
     margin-bottom:20px;
