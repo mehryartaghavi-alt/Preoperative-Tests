@@ -1,18 +1,49 @@
-document.getElementById("nextBtn").addEventListener("click", function () {
+function toggleDropdown(){
 
-let age = document.getElementById("age").value;
-let weight = document.getElementById("weight").value;
-let height = document.getElementById("height").value;
-let asa = document.getElementById("asa").value;
+let d=document.getElementById("dropdown");
 
-if(age=="" || weight=="" || height=="" || asa==""){
-
-alert("Please complete all required fields.");
-
-return;
+d.style.display=d.style.display==="block"?"none":"block";
 
 }
 
-alert("Patient information saved.\nNext page will be Surgical Information.");
+document.querySelectorAll("#dropdown input").forEach(function(item){
+
+item.addEventListener("change",updateSelected);
 
 });
+
+function updateSelected(){
+
+let checked=[...document.querySelectorAll("#dropdown input:checked")];
+
+let text=document.getElementById("selectedText");
+
+if(checked.length===0){
+
+text.innerHTML="Select Comorbidities";
+
+}
+
+else if(checked.length<=2){
+
+text.innerHTML=checked.map(x=>x.value).join(", ");
+
+}
+
+else{
+
+text.innerHTML=checked[0].value+" +"+(checked.length-1)+" more";
+
+}
+
+}
+
+window.onclick=function(e){
+
+if(!e.target.closest(".multi-select")){
+
+document.getElementById("dropdown").style.display="none";
+
+}
+
+}
