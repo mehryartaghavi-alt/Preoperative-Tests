@@ -1,3 +1,13 @@
+.card-header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.card-header h2{
+    margin:0;
+    color:#1565c0;
+    font-size:24px;
+}
 .card label{
     display:block;
     margin-top:18px;
