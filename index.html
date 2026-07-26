@@ -50,39 +50,48 @@
 
 </select>
 
-<h3>Comorbidities</h3>
+<label>Comorbidities</label>
 
-<div class="checkboxes">
+<div class="multi-select">
 
-<label><input type="checkbox"> Diabetes Mellitus</label>
+    <div class="select-btn" onclick="toggleDropdown()">
+        <span id="selectedText">Select Comorbidities</span>
+        <span>▼</span>
+    </div>
 
-<label><input type="checkbox"> Hypertension</label>
+    <div class="dropdown" id="dropdown">
 
-<label><input type="checkbox"> Ischemic Heart Disease</label>
+        <label><input type="checkbox" value="Diabetes Mellitus"> Diabetes Mellitus</label>
 
-<label><input type="checkbox"> Heart Failure</label>
+        <label><input type="checkbox" value="Hypertension"> Hypertension</label>
 
-<label><input type="checkbox"> Chronic Kidney Disease</label>
+        <label><input type="checkbox" value="Ischemic Heart Disease"> Ischemic Heart Disease</label>
 
-<label><input type="checkbox"> Liver Disease</label>
+        <label><input type="checkbox" value="Heart Failure"> Heart Failure</label>
 
-<label><input type="checkbox"> COPD</label>
+        <label><input type="checkbox" value="Chronic Kidney Disease"> Chronic Kidney Disease</label>
 
-<label><input type="checkbox"> Asthma</label>
+        <label><input type="checkbox" value="Liver Disease"> Liver Disease</label>
 
-<label><input type="checkbox"> Thyroid Disease</label>
+        <label><input type="checkbox" value="COPD"> COPD</label>
 
-<label><input type="checkbox"> Anticoagulant / Antiplatelet Therapy</label>
+        <label><input type="checkbox" value="Asthma"> Asthma</label>
 
-<label><input type="checkbox"> Chemotherapy</label>
+        <label><input type="checkbox" value="Thyroid Disease"> Thyroid Disease</label>
 
-<label><input type="checkbox"> Active Malignancy</label>
+        <label><input type="checkbox" value="Anticoagulant / Antiplatelet Therapy"> Anticoagulant / Antiplatelet Therapy</label>
 
-<label><input type="checkbox"> Pregnancy</label>
+        <label><input type="checkbox" value="Chemotherapy"> Chemotherapy</label>
 
-<label><input type="checkbox"> Smoking</label>
+        <label><input type="checkbox" value="Active Malignancy"> Active Malignancy</label>
 
-<label><input type="checkbox"> Obstructive Sleep Apnea</label>
+        <label><input type="checkbox" value="Pregnancy"> Pregnancy</label>
+
+        <label><input type="checkbox" value="Smoking"> Smoking</label>
+
+        <label><input type="checkbox" value="Obstructive Sleep Apnea"> Obstructive Sleep Apnea</label>
+
+    </div>
 
 </div>
 
