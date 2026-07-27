@@ -149,3 +149,15 @@ font-size:20px;
 padding:14px;
 
 }
+.info-btn{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:none;
+    background:#1565c0;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-left:8px;
+}
