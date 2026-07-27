@@ -16,7 +16,7 @@
 
 <div class="container">
 
-<h1>Preoperative Investigation Advisor</h1>
+<h1>Preoperative Tests Advisor</h1>
 
 <h2 class="subtitle">Surgical Information</h2>
 
@@ -46,12 +46,14 @@
 
 </select>
 
-<label>Surgical Grade</label>
+<label>    Surgical Grade
+    <button type="button" class="info-btn" onclick="showGradeInfo()">ⓘ</button>
+</label>
 
 <select id="grade">
 
 <option value="">Select ...</option>
-
+<option>Minimal</option>
 <option>Minor</option>
 <option>Intermediate</option>
 <option>Major</option>
