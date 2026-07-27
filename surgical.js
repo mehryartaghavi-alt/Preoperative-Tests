@@ -28,33 +28,16 @@ function showGradeInfo() {
     alert(
 `SURGICAL GRADE
 
-Minimal
-• Superficial procedures with negligible physiological stress.
-Examples:
-- Skin lesion excision
-- Cataract surgery
-- Diagnostic endoscopy
+Minimal:
+• Superficial procedures with negligible physiological stress such as Skin lesion excision, Cataract surgery, Diagnostic endoscopy
 
-Minor
-• Low-risk procedures with limited physiological stress.
-Examples:
-- Inguinal hernia repair
-- Breast lumpectomy
-- Arthroscopic knee surgery
+Minor:
+• Low-risk procedures with limited physiological stress such as Inguinal hernia repair, Breast lumpectomy, Arthroscopic knee surgery
 
-Intermediate
-• Moderate physiological stress.
-Examples:
-- Total hip replacement
-- Thyroidectomy
-- Hysterectomy
+Intermediate: 
+• Moderate physiological stress such as Total hip replacement, Thyroidectomy, Hysterectomy
 
-Major
-• Major physiological stress and/or significant blood loss.
-Examples:
-- CABG
-- Whipple procedure
-- Major liver resection
-- CRS + HIPEC`
+Major:
+• Major physiological stress and/or significant blood loss such as CABG, Major liver resection, CRS + HIPEC`
     );
 }
