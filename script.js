@@ -54,22 +54,31 @@ document.getElementById("nextBtn").addEventListener("click", function () {
     window.location.href = "surgical.html";
 
 });
-function showFunctionalInfo() {
+function showMetsInfo() {
 
 alert(
-`NYHA Functional Classification
+`Functional Capacity (METs)
 
-Class I
-No limitation of physical activity.
+≥10 METs (Excellent)
+Examples:
+• Running
+• Competitive sports
+• Heavy manual labor
 
-Class II
-Slight limitation of physical activity.
+4–10 METs (Moderate–Good)
+Examples:
+• Climbing 2 flights of stairs
+• Brisk walking
+• Gardening
 
-Class III
-Marked limitation of physical activity.
+<4 METs (Poor)
+Examples:
+• Unable to climb one flight of stairs
+• Walking slowly on level ground
+• Limited by dyspnea or chest pain
 
-Class IV
-Symptoms at rest or with minimal activity.`
+Unknown
+Functional capacity cannot be reliably assessed.`
 );
 
 }
