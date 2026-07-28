@@ -54,3 +54,22 @@ document.getElementById("nextBtn").addEventListener("click", function () {
     window.location.href = "surgical.html";
 
 });
+function showFunctionalInfo() {
+
+alert(
+`NYHA Functional Classification
+
+Class I
+No limitation of physical activity.
+
+Class II
+Slight limitation of physical activity.
+
+Class III
+Marked limitation of physical activity.
+
+Class IV
+Symptoms at rest or with minimal activity.`
+);
+
+}
