@@ -1,125 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Preoperative Tests Advisor</title>
+    <title>Preoperative Assessment & Investigation</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .intro-card {
+            max-width: 750px;
+            margin: auto;
+            padding: 28px 32px;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .intro-card h2 {
+            font-size: 20px;
+            margin-top: 28px;
+        }
+
+        .intro-card h3 {
+            font-size: 18px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        .intro-list {
+            margin: 8px 0 18px 24px;
+            padding-left: 10px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .important-note {
+            margin-top: 28px;
+            padding: 16px 18px;
+            border-left: 4px solid #1565c0;
+            background: #f5f8fc;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .important-note strong {
+            font-size: 18px;
+        }
+
+        .help {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            border-radius: 50%;
+            background: #1565c0;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #startBtn {
+            display: block;
+            margin: 32px auto 5px auto;
+            min-width: 220px;
+            padding: 13px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Preoperative Tests Advisor</h1>
-<p class="subtitle">Patient Information</p>
+    <h1>Preoperative Assessment & Investigation</h1>
 
-<form id="patientForm">
+    <div class="card intro-card">
 
-<div class="card">
+        <p class="intro-text">
+            This clinical decision-support tool is designed to assist in the
+            preoperative assessment of patients and to identify appropriate
+            investigations based on the patient's clinical condition,
+            comorbidities, functional capacity, ASA class, BMI, and type and
+            grade of surgery.
+        </p>
 
-<label>Age* (years)</label>
-<input type="number" id="age" min="0" max="120" >
+
+        <h2>
+            A careful clinical assessment should always be performed:
+        </h2>
 
 
-<div class="radio-group">
-<label><input type="radio" name="sex" value="Male"> Male</label>
-<label><input type="radio" name="sex" value="Female"> Female</label>
-</div>
+        <h3>History should focus on:</h3>
 
-<label>Weight* (kg)</label>
-<input type="number" id="weight" >
+        <ul class="intro-list">
+            <li>Cardiovascular and respiratory systems</li>
+            <li>Functional capacity / METs</li>
+            <li>Frailty</li>
+            <li>Relevant medications and previous medical conditions</li>
+        </ul>
 
-<label>Height* (cm)</label>
-<input type="number" id="height" >
 
-<label>ASA Physical Status*</label>
+        <h3>Physical examination should focus on:</h3>
 
-<select id="asa">
+        <ul class="intro-list">
 
-<option value="">Select ...</option>
+            <li>
+                Cardiovascular system
+            </li>
 
-<option>ASA I</option>
-<option>ASA II</option>
-<option>ASA III</option>
-<option>ASA IV</option>
-<option>ASA V</option>
-<option>ASA VI</option>
+            <li>
+                Respiratory system
+            </li>
 
-</select>
-<label>
-    Functional Capacity (METs)
-    <span class="help" onclick="showMetsInfo()">?</span>
-</label>
+            <li>
+                General clinical condition
+            </li>
 
-<select id="mets">
+            <li>
+                Airway assessment
+                <span
+                    class="help"
+                    onclick="showAirwayHelp()"
+                    title="Airway Assessment"
+                >?</span>
+            </li>
 
-    <option value="">Select Functional Capacity</option>
+            <li>
+                OSA assessment (BMI &gt;40)
+                <span
+                    class="help"
+                    onclick="showOSAHelp()"
+                    title="STOP-BANG"
+                >?</span>
+            </li>
 
-    <option>≥10 METs (Excellent)</option>
-    <option>4–10 METs (Moderate–Good)</option>
-    <option><4 METs (Poor)</option>
-    <option>Unknown</option>
+        </ul>
 
-</select>
-<label>Comorbidities*</label>
 
-<div class="multi-select">
+        <div class="important-note">
 
-    <div class="select-btn" onclick="toggleDropdown()">
-        <span id="selectedText">Select ...</span>
-        <span>▼</span>
-    </div>
+            <strong>Important Note</strong>
 
-    <div class="dropdown" id="dropdown">
+            <p>
+                The system provides guideline-based recommendations only;
+                final clinical decisions remain the responsibility of the
+                surgical and anesthesia team.
+            </p>
 
-        <label><input type="checkbox" value="Diabetes Mellitus"> Diabetes Mellitus</label>
+        </div>
 
-        <label><input type="checkbox" value="Hypertension"> Hypertension</label>
 
-        <label><input type="checkbox" value="Ischemic Heart Disease"> Ischemic Heart Disease</label>
-
-        <label><input type="checkbox" value="Heart Failure"> Heart Failure</label>
-
-        <label><input type="checkbox" value="Chronic Kidney Disease"> Chronic Kidney Disease</label>
-
-        <label><input type="checkbox" value="Liver Disease"> Liver Disease</label>
-
-        <label><input type="checkbox" value="COPD"> COPD</label>
-
-        <label><input type="checkbox" value="Asthma"> Asthma</label>
-
-        <label><input type="checkbox" value="Thyroid Disease"> Thyroid Disease</label>
-
-        <label><input type="checkbox" value="Anticoagulant / Antiplatelet Therapy"> Anticoagulant / Antiplatelet Therapy</label>
-
-        <label><input type="checkbox" value="Chemotherapy"> Chemotherapy</label>
-
-        <label><input type="checkbox" value="Active Malignancy"> Active Malignancy</label>
-
-        <label><input type="checkbox" value="Pregnancy"> Pregnancy</label>
-
-        <label><input type="checkbox" value="Smoking"> Smoking</label>
-
-        <label><input type="checkbox" value="Obstructive Sleep Apnea"> Obstructive Sleep Apnea</label>
+        <button
+            type="button"
+            id="startBtn"
+        >
+            START →
+        </button>
 
     </div>
 
 </div>
 
-<button type="button" id="nextBtn">
-Next →
-</button>
 
-</div>
+<script>
 
-</form>
+function showAirwayHelp() {
 
-</div>
+    alert(
+`Airway Assessment
 
-<script src="script.js"></script>
+A systematic airway assessment should include:
+
+• Mallampati classification
+• Mouth opening
+• Thyromental distance
+• Neck mobility
+• Dentition
+• Jaw protrusion
+• Facial and mandibular abnormalities
+• Previous difficult airway or intubation history`
+    );
+
+}
+
+
+function showOSAHelp() {
+
+    alert(
+`OSA Screening – STOP-BANG
+
+S – Snoring
+T – Tiredness
+O – Observed apnea
+P – High blood Pressure
+B – BMI >35 kg/m²
+A – Age >50 years
+N – Neck circumference >40 cm
+G – Gender male
+
+STOP-BANG is a screening tool and does not by itself establish a diagnosis of OSA.`
+    );
+
+}
+
+
+document
+    .getElementById("startBtn")
+    .addEventListener("click", function () {
+
+        window.location.href = "patient.html";
+
+    });
+
+</script>
 
 </body>
 </html>
