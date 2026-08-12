@@ -1,43 +1,82 @@
-document.getElementById("nextBtn").addEventListener("click",function(){
+// ==========================================
+// Surgical Information – Version 4
+// ==========================================
 
-let type=document.getElementById("surgicalType").value;
-
-let grade=document.getElementById("grade").value;
-
-let blood=document.getElementById("bloodLoss").value;
-
-let urgency=document.getElementById("urgency").value;
-
-if(type=="" || grade=="" || blood=="" || urgency==""){
-
-alert("Please complete all fields.");
-
-return;
-
-}
-
-alert("Surgical information saved.");
-
-});
 document.getElementById("nextBtn").addEventListener("click", function () {
 
+    const type = document.getElementById("surgicalType").value;
+    const grade = document.getElementById("grade").value;
+    const blood = document.getElementById("bloodLoss").value;
+    const urgency = document.getElementById("urgency").value;
+
+    // Check required fields
+    if (
+        type === "" ||
+        grade === "" ||
+        blood === "" ||
+        urgency === ""
+    ) {
+        alert("Please complete all fields.");
+        return;
+    }
+
+    // Temporary confirmation
+    // This will later be replaced by the Version 4
+    // investigation rule engine.
+
+    alert("Surgical information saved.");
+
+    // Go to Page 5
     window.location.href = "investigations.html";
 
 });
+
+
+// ==========================================
+// Surgical Grade Help
+// ==========================================
+
 function showGradeInfo() {
+
     alert(
 `SURGICAL GRADE
 
 Minimal:
-• Superficial procedures with negligible physiological stress such as Skin lesion excision, Cataract surgery, Diagnostic endoscopy
+• Superficial or very low physiological stress
+• Minimal expected blood loss
 
-Minor:
-• Low-risk procedures with limited physiological stress such as Inguinal hernia repair, Breast lumpectomy, Arthroscopic knee surgery
+Examples:
+• Skin lesion excision
+• Cataract surgery
+• Diagnostic endoscopy
 
-Intermediate: 
-• Moderate physiological stress such as Total hip replacement, Thyroidectomy, Hysterectomy
+Mild:
+• Limited physiological stress
+• Usually low blood loss
 
-Major:
-• Major physiological stress and/or significant blood loss such as CABG, Major liver resection, CRS + HIPEC`
+Examples:
+• Inguinal hernia repair
+• Breast lumpectomy
+• Minor orthopedic procedures
+
+Grade 2:
+• Moderate physiological stress
+• Moderate risk of complications or blood loss
+
+Examples:
+• Total hip replacement
+• Thyroidectomy
+• Hysterectomy
+
+Grade 3:
+• Major physiological stress and/or significant blood loss
+• Higher perioperative risk
+
+Examples:
+• Major abdominal surgery
+• Major vascular surgery
+• Major thoracic surgery
+• CRS + HIPEC`
     );
+
 }
