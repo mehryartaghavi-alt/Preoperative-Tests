@@ -93,6 +93,6 @@ function goNext() {
     // Page 3 (Comorbidities) will replace this target
     // in the next development step.
 
-    window.location.href = "surgical.html";
+    window.location.href = "comorbidities.html";
 
 }
