@@ -1,1 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Comorbidities</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.comorbidity-card {
+    max-width: 720px;
+    margin: auto;
+}
+
+.comorbidity-group {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.comorbidity-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.sub-options {
+    margin: 8px 0 0 28px;
+    display: none;
+}
+
+.sub-options select {
+    width: 100%;
+    padding: 9px;
+    margin-top: 5px;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.navigation button {
+    flex: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Comorbidities</h1>
+
+<div class="card comorbidity-card">
+
+<!-- Hypertension -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="hypertension">
+Hypertension
+</label>
+
+<div class="sub-options" id="hypertensionStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Diabetes -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="diabetes">
+Diabetes Mellitus
+</label>
+
+<div class="sub-options" id="diabetesStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Coronary Disease -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="cad">
+Coronary Artery Disease
+</label>
+
+<div class="sub-options" id="cadStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Heart Failure -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="heartFailure">
+Heart Failure
+</label>
+
+<div class="sub-options" id="heartFailureStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Arrhythmia -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="arrhythmia">
+Arrhythmia
+</label>
+
+<div class="sub-options" id="arrhythmiaStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Valvular -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="valvular">
+Valvular Heart Disease
+</label>
+
+<div class="sub-options" id="valvularStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- CKD -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="ckd">
+Chronic Kidney Disease (CKD)
+</label>
+
+<div class="sub-options" id="ckdStatus">
+
+<label>CKD Type</label>
+
+<select id="ckdType">
+<option value="">Select...</option>
+<option value="non-dialysis">Non-dialysis</option>
+<option value="dialysis">Dialysis</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Liver -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="liver">
+Chronic Liver Disease / Cirrhosis
+</label>
+
+<div class="sub-options" id="liverStatus">
+
+<label>Clinical status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Respiratory -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="respiratory">
+Asthma / COPD
+</label>
+
+<div class="sub-options" id="respiratoryStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled / Exacerbated</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Smoking -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="smoking">
+Smoking
+</label>
+
+<div class="sub-options" id="smokingStatus">
+
+<label>Smoking status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Current smoker</option>
+<option>Former smoker</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- CVA -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="cva">
+Cerebrovascular Disease / CVA
+</label>
+
+<div class="sub-options" id="cvaStatus">
+
+<label>Neurological status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Asymptomatic / Stable</option>
+<option>Symptomatic</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Thyroid -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="thyroid">
+Thyroid Disease
+</label>
+
+<div class="sub-options" id="thyroidStatus">
+
+<label>Clinical status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Asymptomatic / Controlled</option>
+<option>Symptomatic</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Bleeding Disorder -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="bleeding">
+Bleeding / Coagulation Disorder
+</label>
+
+<div class="sub-options" id="bleedingStatus">
+
+<label>Control status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Controlled</option>
+<option>Uncontrolled</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Anemia -->
+
+<div class="comorbidity-group">
+
+<label>
+<input type="checkbox" id="anemia">
+Anemia
+</label>
+
+<div class="sub-options" id="anemiaStatus">
+
+<label>Type / status</label>
+
+<select>
+<option value="">Select...</option>
+<option>Known / Stable</option>
+<option>Newly diagnosed</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- Navigation -->
+
+<div class="navigation">
+
+<button type="button" onclick="goBack()">
+← Back
+</button>
+
+<button type="button" onclick="goNext()">
+NEXT →
+</button>
+
+</div>
+
+</div>
+</div>
+
+<script src="comorbidities.js"></script>
+
+</body>
+</html>
