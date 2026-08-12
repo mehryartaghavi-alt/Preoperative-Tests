@@ -28,36 +28,49 @@
 
 <option value="">Select ...</option>
 
-<option>General Surgery</option>
-<option>Orthopedic Surgery</option>
-<option>Neurosurgery</option>
-<option>Cardiac Surgery</option>
-<option>Thoracic Surgery</option>
-<option>Vascular Surgery</option>
-<option>Urologic Surgery</option>
-<option>Gynecologic Surgery</option>
-<option>Obstetric Surgery</option>
-<option>ENT Surgery</option>
-<option>Ophthalmic Surgery</option>
-<option>Plastic Surgery</option>
-<option>Pediatric Surgery</option>
-<option>Transplant Surgery</option>
-<option>Other</option>
+<option value="general">General Surgery</option>
+<option value="orthopedic">Orthopedic Surgery</option>
+<option value="neurosurgery">Neurosurgery</option>
+<option value="cardiac">Cardiac Surgery</option>
+<option value="thoracic">Thoracic Surgery</option>
+<option value="vascular">Vascular Surgery</option>
+<option value="urologic">Urologic Surgery</option>
+<option value="gynecologic">Gynecologic Surgery</option>
+<option value="obstetric">Obstetric Surgery</option>
+<option value="ent">ENT Surgery</option>
+<option value="ophthalmic">Ophthalmic Surgery</option>
+<option value="plastic">Plastic Surgery</option>
+<option value="pediatric">Pediatric Surgery</option>
+<option value="transplant">Transplant Surgery</option>
+<option value="other">Other</option>
 
 </select>
 
-<label>    Surgical Grade
-<span class="help" onclick="showGradeInfo()">?</span></label>
+
+<label>
+Surgical Grade
+
+<span
+class="help"
+onclick="showGradeInfo()"
+>?</span>
+
+</label>
 
 <select id="grade">
 
 <option value="">Select ...</option>
-<option>Minimal</option>
-<option>Minor</option>
-<option>Intermediate</option>
-<option>Major</option>
+
+<option value="minimal">Minimal</option>
+
+<option value="mild">Mild</option>
+
+<option value="grade2">Grade 2</option>
+
+<option value="grade3">Grade 3</option>
 
 </select>
+
 
 <label>Expected Blood Loss</label>
 
@@ -65,11 +78,18 @@
 
 <option value="">Select ...</option>
 
-<option>Low (<500 mL)</option>
-<option>Moderate (500–1000 mL)</option>
-<option>High (>1000 mL)</option>
+<option value="low">Low (&lt;500 mL)</option>
+
+<option value="moderate">
+Moderate (500–1000 mL)
+</option>
+
+<option value="high">
+High (&gt;1000 mL)
+</option>
 
 </select>
+
 
 <label>Surgical Urgency</label>
 
@@ -77,17 +97,30 @@
 
 <option value="">Select ...</option>
 
-<option>Elective</option>
-<option>Urgent</option>
-<option>Emergency</option>
+<option value="elective">Elective</option>
+
+<option value="urgent">Urgent</option>
+
+<option value="emergency">Emergency</option>
 
 </select>
 
+
 <div class="button-group">
 
-<button type="button" onclick="history.back()">← Back</button>
+<button
+type="button"
+onclick="history.back()"
+>
+← Back
+</button>
 
-<button type="button" id="nextBtn">Next →</button>
+<button
+type="button"
+id="nextBtn"
+>
+Next →
+</button>
 
 </div>
 
