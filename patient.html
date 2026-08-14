@@ -10,7 +10,7 @@
 
 <style>
 .patient-card {
-    max-width: 300px;
+    max-width: 270px;
     margin: auto;
 }
 
@@ -30,7 +30,9 @@
 
 .sex-group {
     display: flex;
-    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     margin-top: 8px;
 }
 
@@ -162,19 +164,7 @@
             </option>
         </select>
 
-        <label for="frailty">
-            Frailty
-        </label>
-
-        <select id="frailty">
-            <option value="">Select...</option>
-            <option value="fit">Fit</option>
-            <option value="pre-frail">Pre-frail</option>
-            <option value="frail">Frail</option>
-            <option value="unknown">Unknown</option>
-        </select>
-
-        <div class="navigation">
+      <div class="navigation">
 
             <button
                 type="button"
