@@ -180,44 +180,21 @@ padding:14px;
 .condition-box {
     display: flex;
     align-items: center;
-    gap: 12px;
-
-    padding: 15px;
-
-    background: #ffffff;
-    border: 1px solid #d8d8d8;
-    border-radius: 12px;
-
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: fit-content;
     cursor: pointer;
-
-    font-size: 16px;
-    min-height: 52px;
-
-    box-sizing: border-box;
+    background: #fff;
 }
 
-.condition-box input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    cursor: pointer;
+.condition-box input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
 }
 
-.condition-box:hover {
-    border-color: #888;
-}
-
-.condition-box input[type="checkbox"]:checked + span {
-    font-weight: 600;
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .comorbidities-grid {
-        grid-template-columns: 1fr;
-    }
-
+.condition-box span {
+    font-size: 15px;
 }
