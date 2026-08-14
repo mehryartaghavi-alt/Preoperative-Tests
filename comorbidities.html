@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Comorbidities</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -20,112 +18,93 @@
 
 <h2 class="subtitle">Comorbidities</h2>
 
-<div class="card">
-
 <p class="reminder">
 Select all relevant comorbidities and medical conditions.
 </p>
 
+<div class="comorbidities-grid">
 
-<label class="check-row">
-<input type="checkbox" id="hypertension">
-Hypertension
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="hypertension">
+        <span>Hypertension</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="diabetes">
+        <span>Diabetes Mellitus</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="diabetes">
-Diabetes Mellitus
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="cad">
+        <span>Coronary Artery Disease</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="heartFailure">
+        <span>Heart Failure</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="cad">
-Coronary Artery Disease
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="arrhythmia">
+        <span>Arrhythmia</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="valvular">
+        <span>Valvular Heart Disease</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="heartFailure">
-Heart Failure
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="ckd">
+        <span>Chronic Kidney Disease</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="liver">
+        <span>Chronic Liver Disease / Cirrhosis</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="arrhythmia">
-Arrhythmia
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="respiratory">
+        <span>Respiratory Disease</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="smoking">
+        <span>Smoking</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="valvular">
-Valvular Heart Disease
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="cva">
+        <span>Cerebrovascular Disease / CVA</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="thyroid">
+        <span>Thyroid Disease</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="ckd">
-Chronic Kidney Disease
-</label>
+    <label class="condition-box">
+        <input type="checkbox" id="bleeding">
+        <span>Bleeding / Coagulation Disorder</span>
+    </label>
 
+    <label class="condition-box">
+        <input type="checkbox" id="anemia">
+        <span>Anemia</span>
+    </label>
 
-<label class="check-row">
-<input type="checkbox" id="liver">
-Chronic Liver Disease / Cirrhosis
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="respiratory">
-Respiratory Disease
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="smoking">
-Smoking
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="cva">
-Cerebrovascular Disease / CVA
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="thyroid">
-Thyroid Disease
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="bleeding">
-Bleeding / Coagulation Disorder
-</label>
-
-
-<label class="check-row">
-<input type="checkbox" id="anemia">
-Anemia
-</label>
-
+</div>
 
 <div class="button-group">
 
-<button
-type="button"
-onclick="history.back()">
-← Back
-</button>
+    <button type="button" onclick="history.back()">
+        ← Back
+    </button>
 
-<button
-type="button"
-onclick="goNext()">
-Next →
-</button>
-
-</div>
+    <button type="button" onclick="goNext()">
+        Next →
+    </button>
 
 </div>
 
@@ -134,5 +113,4 @@ Next →
 <script src="comorbidities.js"></script>
 
 </body>
-
 </html>
