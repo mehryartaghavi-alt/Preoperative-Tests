@@ -1,7 +1,6 @@
 // ==========================================
-// Comorbidities – Version 4
+// Comorbidities – Version 5
 // ==========================================
-
 
 const conditions = [
     ["hypertension", "hypertensionStatus"],
@@ -21,7 +20,8 @@ const conditions = [
 ];
 
 
-conditions.forEach(function(item) {
+// Checkbox behavior
+conditions.forEach(function (item) {
 
     const checkbox =
         document.getElementById(item[0]);
@@ -29,11 +29,18 @@ conditions.forEach(function(item) {
     const subOptions =
         document.getElementById(item[1]);
 
-    checkbox.addEventListener("change", function() {
+    if (!checkbox || !subOptions) {
+        return;
+    }
+
+    checkbox.addEventListener("change", function () {
 
         if (checkbox.checked) {
+
             subOptions.style.display = "block";
+
         } else {
+
             subOptions.style.display = "none";
 
             const select =
@@ -49,22 +56,33 @@ conditions.forEach(function(item) {
 });
 
 
-// ------------------------------------------
-// Navigation
-// ------------------------------------------
+// Save comorbidities
+function saveComorbidities() {
 
-function goBack() {
+    const data = {};
 
-    window.location.href = "patient.html";
+    conditions.forEach(function (item) {
 
+        const checkbox =
+            document.getElementById(item[0]);
+
+        data[item[0]] =
+            checkbox ? checkbox.checked : false;
+
+    });
+
+    localStorage.setItem(
+        "comorbiditiesData",
+        JSON.stringify(data)
+    );
 }
 
 
+// Next
 function goNext() {
 
-    // Temporary:
-    // Page 4 will be surgical.html
+    saveComorbidities();
 
-    window.location.href = "surgical.html";
-
+    window.location.href =
+        "surgical.html";
 }
