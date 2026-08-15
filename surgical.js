@@ -1,82 +1,52 @@
-// ==========================================
-// Surgical Information – Version 4
-// ==========================================
+document.getElementById("nextBtn")
+    .addEventListener("click", function () {
 
-document.getElementById("nextBtn").addEventListener("click", function () {
+        const type =
+            document.getElementById("surgicalType").value;
 
-    const type = document.getElementById("surgicalType").value;
-    const grade = document.getElementById("grade").value;
-    const blood = document.getElementById("bloodLoss").value;
-    const urgency = document.getElementById("urgency").value;
+        const grade =
+            document.getElementById("grade").value;
 
-    // Check required fields
-    if (
-        type === "" ||
-        grade === "" ||
-        blood === "" ||
-        urgency === ""
-    ) {
-        alert("Please complete all fields.");
-        return;
-    }
+        const blood =
+            document.getElementById("bloodLoss").value;
 
-    // Temporary confirmation
-    // This will later be replaced by the Version 4
-    // investigation rule engine.
-
-    alert("Surgical information saved.");
-
-    // Go to Page 5
-    window.location.href = "investigations.html";
-
-});
+        const urgency =
+            document.getElementById("urgency").value;
 
 
-// ==========================================
-// Surgical Grade Help
-// ==========================================
+        if (
+            type === "" ||
+            grade === "" ||
+            blood === "" ||
+            urgency === ""
+        ) {
 
-function showGradeInfo() {
+            alert("Please complete all fields.");
 
-    alert(
-`SURGICAL GRADE
+            return;
+        }
 
-Minimal:
-• Superficial or very low physiological stress
-• Minimal expected blood loss
 
-Examples:
-• Skin lesion excision
-• Cataract surgery
-• Diagnostic endoscopy
+        const surgeryData = {
 
-Mild:
-• Limited physiological stress
-• Usually low blood loss
+            surgicalType: type,
 
-Examples:
-• Inguinal hernia repair
-• Breast lumpectomy
-• Minor orthopedic procedures
+            grade: grade,
 
-Grade 2:
-• Moderate physiological stress
-• Moderate risk of complications or blood loss
+            bloodLoss: blood,
 
-Examples:
-• Total hip replacement
-• Thyroidectomy
-• Hysterectomy
+            urgency: urgency
 
-Grade 3:
-• Major physiological stress and/or significant blood loss
-• Higher perioperative risk
+        };
 
-Examples:
-• Major abdominal surgery
-• Major vascular surgery
-• Major thoracic surgery
-• CRS + HIPEC`
-    );
 
-}
+        localStorage.setItem(
+            "surgeryData",
+            JSON.stringify(surgeryData)
+        );
+
+
+        window.location.href =
+            "investigations.html";
+
+    });
