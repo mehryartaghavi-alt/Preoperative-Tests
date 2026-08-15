@@ -92,7 +92,7 @@ function goNext() {
     // Temporary navigation.
     // Page 3 (Comorbidities) will replace this target
     // in the next development step.
-
+savePatientData();
     window.location.href = "comorbidities.html";
 
 }
