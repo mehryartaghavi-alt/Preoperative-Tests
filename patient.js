@@ -96,3 +96,38 @@ function goNext() {
     window.location.href = "comorbidities.html";
 
 }
+function savePatientData() {
+
+    const selectedSex =
+        document.querySelector('input[name="sex"]:checked');
+
+    const patientData = {
+
+        age:
+            document.getElementById("age").value,
+
+        sex:
+            selectedSex ? selectedSex.value : "",
+
+        height:
+            document.getElementById("height").value,
+
+        weight:
+            document.getElementById("weight").value,
+
+        bmi:
+            document.getElementById("bmi").value,
+
+        asa:
+            document.getElementById("asa").value,
+
+        mets:
+            document.getElementById("mets").value
+
+    };
+
+    localStorage.setItem(
+        "patientData",
+        JSON.stringify(patientData)
+    );
+}
