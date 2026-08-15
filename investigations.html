@@ -510,23 +510,23 @@ const summarySurgery =
 
 document.getElementById("resultAge")
     .textContent =
-    patient.age || "—";
+    summaryPatient.age || "—";
 
 
 document.getElementById("resultSex")
     .textContent =
-    patient.sex || "—";
+    summaryPatient.sex || "—";
 
 
 document.getElementById("resultBMI")
     .textContent =
-    patient.bmi || "—";
+    summaryPatient.bmi || "—";
 
 
 document.getElementById("resultASA")
     .textContent =
-    patient.asa
-        ? "ASA " + patient.asa
+    summaryPatient.asa
+        ? "ASA " + summaryPatient.asa
         : "—";
 
 
@@ -545,7 +545,7 @@ const metsLabels = {
 
 document.getElementById("resultMETs")
     .textContent =
-    metsLabels[patient.mets]
+    metsLabels[summaryPatient.mets]
         || "—";
 
 
@@ -568,7 +568,7 @@ const gradeLabels = {
 
 document.getElementById("resultGrade")
     .textContent =
-    gradeLabels[surgery.grade]
+    gradeLabels[summarySurgery.grade]
         || "—";
 
 
