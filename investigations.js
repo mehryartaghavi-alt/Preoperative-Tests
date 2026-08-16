@@ -212,6 +212,9 @@ function R001_age() {
 
         // No automatic laboratory testing.
 
+        addAdvise("CBC, FBS, BUN, Cr",
+                 "not necessary, gust consider");
+
         addAction(
             "Age-related clinical risk assessment",
             "Age alone is not considered an indication for routine laboratory testing."
