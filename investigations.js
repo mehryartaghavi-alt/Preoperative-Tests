@@ -213,7 +213,7 @@ function R001_age() {
         // No automatic laboratory testing.
 
         addAdvise("CBC, FBS, BUN, Cr",
-                 "not necessary, gust consider");
+                 "not necessary, just consider");
 
         addAction(
             "Age-related clinical risk assessment",
@@ -236,7 +236,9 @@ function R002_diabetes() {
 
         addRequired(
             "HbA1c",
-            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months."
+            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months.",
+            "FBS", 
+                "at the morning of surgery"
         );
 
     }
