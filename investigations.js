@@ -214,9 +214,8 @@ function R001_age() {
 
         addAction(
             "Age-related clinical risk assessment",
-            "Age alone is not considered an indication for routine laboratory testing.",
-            "But CBC, FBS, BUN, Cr just consider."
-        );
+            "Age alone is not considered an indication for routine laboratory testing, But CBC, FBS, BUN, Cr sometimes consider."
+                  );
 
     }
 
@@ -233,10 +232,9 @@ function R002_diabetes() {
     if (data.diabetes) {
 
         addRequired(
-            "HbA1c",
-            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months.",
-            "FBS, at the morning of surgery"
-            );
+            "HbA1c, FBS",
+            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months. FBS, at the morning of surgery."
+                       );
 
     }
 
