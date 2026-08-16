@@ -238,7 +238,7 @@ function R002_diabetes() {
             "HbA1c",
             "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months.",
             "FBS", 
-                "at the morning of surgery"
+            "at the morning of surgery"
         );
 
     }
