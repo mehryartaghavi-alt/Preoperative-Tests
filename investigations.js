@@ -383,7 +383,14 @@ function R007_ECG() {
         data.arrhythmia ||
         data.valvular;
 
-    if (data.asa >= 3) {
+    if (data.normalizedGrade === "major") {
+       addAdvise(
+            "ECG",
+             "If the patient is >65y and has not the past 12 months."
+           );
+    }
+        
+        if (data.asa >= 3) {
 
         if (
             data.normalizedGrade === "intermediate" ||
