@@ -273,11 +273,16 @@ function R004_CBC() {
             "CBC",
             "Major/complex surgery."
         );
+
     }
-        if (data.normalizedGrade === "intermediate") {
-            addAdvise(
-           "CBC"
-          );
+
+    if (data.normalizedGrade === "intermediate") {
+
+        addAdvice(
+            "CBC",
+            "Consider CBC based on clinical assessment and patient-related risk factors."
+        );
+
     }
 
     if (
@@ -294,7 +299,6 @@ function R004_CBC() {
     }
 
 }
-
 
 // ============================================================
 // RULE R005
