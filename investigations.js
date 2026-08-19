@@ -277,7 +277,6 @@ function R004_CBC() {
         if (data.normalizedGrade === "intermediate") {
             addAdvise(
            "CBC"
-         "Bleeding risk, or anticipated high blood loss."
         );
     }
 
@@ -304,14 +303,7 @@ function R004_CBC() {
 
 function R005_kidney() {
 
-     if (data.normalizedGrade === "major") {
-          addAdvise(
-              "Renal function + electrolytes",
-            "If there is a risk of AKI."
-              );
-     }
-
-         if (data.asa >= 2) {
+    if (data.asa >= 2) {
 
         if (
             data.normalizedGrade === "intermediate" ||
@@ -383,58 +375,52 @@ function R007_ECG() {
         data.arrhythmia ||
         data.valvular;
 
-    const intermediateOrMajor =
-        data.normalizedGrade === "intermediate" ||
-        data.normalizedGrade === "major";
+    if (data.asa >= 3) {
 
-    // 1. ASA III/IV + intermediate/major surgery
-    if (data.asa >= 3 && intermediateOrMajor) {
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
 
-        addRequired(
-            "ECG",
-            "ASA III/IV undergoing intermediate or major surgery."
-        );
+            addRequired(
+                "ECG",
+                "ASA III/IV with intermediate or major surgery."
+            );
 
-        return;
+        }
+
     }
 
-    // 2. ASA II + cardiovascular disease + intermediate/major surgery
     if (
         data.asa === 2 &&
         cardiovascularDisease &&
-        intermediateOrMajor
+        (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        )
     ) {
 
         addRequired(
             "ECG",
-            "ASA II with cardiovascular disease undergoing intermediate or major surgery."
+            "ASA II with cardiovascular disease undergoing intermediate/major surgery."
         );
 
-        return;
     }
 
-    // 3. Major surgery in patients >65 years
     if (
-        data.normalizedGrade === "major" &&
-        data.age > 65
+        data.cad ||
+        data.heartFailure ||
+        data.arrhythmia ||
+        data.valvular
     ) {
 
         addAdvise(
             "ECG",
-            "Advise ECG if the patient is >65 years and has not had an ECG within the past 12 months."
+            "Consider ECG according to cardiovascular history, symptoms and recent ECG availability."
         );
 
-        return;
     }
 
-    // 4. Other patients with cardiovascular disease
-    if (cardiovascularDisease) {
-
-        addAdvise(
-            "ECG",
-            "Advise ECG according to cardiovascular history, symptoms and availability of a recent ECG."
-        );
-    }
 }
 
 
