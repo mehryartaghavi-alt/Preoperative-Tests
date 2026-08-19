@@ -280,7 +280,6 @@ function R004_CBC() {
 
         addAdvise(
             "CBC" 
-            "Consider on risk factors."
             );
 
     }
