@@ -1,52 +1,59 @@
+// ==========================================
+// Surgical Information - TESTING MODE
+// ==========================================
+
 document.getElementById("nextBtn")
     .addEventListener("click", function () {
 
-        const type =
-            document.getElementById("surgicalType").value;
-
-        const grade =
-            document.getElementById("grade").value;
-
-        const blood =
-            document.getElementById("bloodLoss").value;
-
-        const urgency =
-            document.getElementById("urgency").value;
-
-
-        if (
-            type === "" ||
-            grade === "" ||
-            blood === "" ||
-            urgency === ""
-        ) {
-
-            alert("Please complete all fields.");
-
-            return;
-        }
-
-
         const surgeryData = {
 
-            surgicalType: type,
+            surgicalType:
+                document.getElementById("surgicalType").value,
 
-            grade: grade,
+            grade:
+                document.getElementById("grade").value,
 
-            bloodLoss: blood,
+            bloodLoss:
+                document.getElementById("bloodLoss").value,
 
-            urgency: urgency
+            urgency:
+                document.getElementById("urgency").value
 
         };
 
-
+        // Save data
         localStorage.setItem(
             "surgeryData",
             JSON.stringify(surgeryData)
         );
 
-
+        // Go directly to Page 5
         window.location.href =
             "investigations.html";
 
     });
+
+
+// ==========================================
+// Surgical Grade Help
+// ==========================================
+
+function showGradeInfo() {
+
+    alert(`
+SURGICAL GRADE
+
+Minimal:
+Low physiological stress procedures.
+
+Mild:
+Low-risk procedures.
+
+Grade 2:
+Moderate physiological stress.
+
+Grade 3:
+Major physiological stress.
+`);
+
+}
