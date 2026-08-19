@@ -277,6 +277,7 @@ function R004_CBC() {
         if (data.normalizedGrade === "intermediate") {
             addAdvise(
            "CBC"
+           "Bleeding risk, or anticipated high blood loss."
         );
     }
 
