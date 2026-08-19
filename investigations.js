@@ -273,7 +273,11 @@ function R004_CBC() {
             "CBC",
             "Major/complex surgery."
         );
-
+    }
+        if (data.normalizedGrade === "intermediate") {
+            addAdvise(
+           "CBC"
+        );
     }
 
     if (
