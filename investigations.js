@@ -338,7 +338,7 @@ function R005_kidney() {
         data.normalizedGrade === "major"
     ) {
 
-        addAdvise(test, reason)(
+        addAdvise(
             "Kidney function assessment",
             "Consider renal function testing if the patient is at risk of acute kidney injury (AKI)."
         );
