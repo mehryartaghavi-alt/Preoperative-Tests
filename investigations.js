@@ -375,55 +375,59 @@ function R007_ECG() {
         data.arrhythmia ||
         data.valvular;
 
-    if (data.asa >= 3) {
+    const intermediateOrMajor =
+        data.normalizedGrade === "intermediate" ||
+        data.normalizedGrade === "major";
 
-        if (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        ) {
+    // 1. ASA III/IV + intermediate/major surgery
+    if (data.asa >= 3 && intermediateOrMajor) {
 
-            addRequired(
-                "ECG",
-                "ASA III/IV with intermediate or major surgery."
-            );
+        addRequired(
+            "ECG",
+            "ASA III/IV undergoing intermediate or major surgery."
+        );
 
-        }
-
+        return;
     }
 
+    // 2. ASA II + cardiovascular disease + intermediate/major surgery
     if (
         data.asa === 2 &&
         cardiovascularDisease &&
-        (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        )
+        intermediateOrMajor
     ) {
 
         addRequired(
             "ECG",
-            "ASA II with cardiovascular disease undergoing intermediate/major surgery."
+            "ASA II with cardiovascular disease undergoing intermediate or major surgery."
         );
 
+        return;
     }
 
+    // 3. Major surgery in patients >65 years
     if (
-        data.cad ||
-        data.heartFailure ||
-        data.arrhythmia ||
-        data.valvular
+        data.normalizedGrade === "major" &&
+        data.age > 65
     ) {
 
         addAdvise(
             "ECG",
-            "Consider ECG according to cardiovascular history, symptoms and recent ECG availability."
+            "Advise ECG if the patient is >65 years and has not had an ECG within the past 12 months."
         );
 
+        return;
     }
 
+    // 4. Other patients with cardiovascular disease
+    if (cardiovascularDisease) {
+
+        addAdvise(
+            "ECG",
+            "Advise ECG according to cardiovascular history, symptoms and availability of a recent ECG."
+        );
+    }
 }
-
-
 // ============================================================
 // RULE R008
 // COAGULATION
