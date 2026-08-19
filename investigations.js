@@ -304,7 +304,14 @@ function R004_CBC() {
 
 function R005_kidney() {
 
-    if (data.asa >= 2) {
+     if (data.normalizedGrade === "major") {
+          addAdvise(
+              "Renal function + electrolytes",
+            "If there is a risk of AKI."
+              );
+     }
+
+         if (data.asa >= 2) {
 
         if (
             data.normalizedGrade === "intermediate" ||
