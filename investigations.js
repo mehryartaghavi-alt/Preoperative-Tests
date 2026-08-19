@@ -278,7 +278,7 @@ function R004_CBC() {
 
     if (data.normalizedGrade === "intermediate") {
 
-        addAdvise(
+        addAdvise(test, reason) (
             "CBC",
             "Consider CBC based on clinical assessment and patient-related risk factors."
         );
