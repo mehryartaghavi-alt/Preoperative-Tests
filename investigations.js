@@ -328,8 +328,20 @@ function R005_kidney() {
 
     }
 
-}
+    // Grade 3 + ASA I → clinical assessment for AKI risk
+    if (
+        data.asa === 1 &&
+        data.normalizedGrade === "major"
+    ) {
 
+        addAdvice(
+            "Kidney function assessment",
+            "Consider renal function testing if the patient is at risk of acute kidney injury (AKI)."
+        );
+
+    }
+
+}
 
 // ============================================================
 // RULE R006
