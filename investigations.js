@@ -280,7 +280,7 @@ function R004_CBC() {
 
         addAdvise(
             "CBC" 
-            "Consider CBC based on clinical assessment and patient-related risk factors."
+            "Consider on risk factors."
             );
 
     }
