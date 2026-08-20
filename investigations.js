@@ -452,7 +452,18 @@ function R007_ECG() {
 
         return;
     }
+if (
+    data.asa === 2 &&
+    data.age >= 65 &&
+    data.normalizedGrade === "intermediate"
+) {
 
+    addAdvise(
+        "ECG",
+        "Consider ECG in patients aged 65 years or older undergoing intermediate surgery."
+    );
+
+}
     // =========================
     // ADVISE
     // =========================
