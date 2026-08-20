@@ -455,6 +455,7 @@ function R007_ECG() {
 
 function R008_coagulation() {
 
+    // Known bleeding / coagulation disorder
     if (data.bleeding) {
 
         addRequired(
@@ -464,24 +465,38 @@ function R008_coagulation() {
 
     }
 
-    if (data.liver) {
 
-        if (
+    // Chronic liver disease
+    if (
+        data.liver &&
+        (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major"
-        ) {
+        )
+    ) {
 
-            addAdvise(
-                "PT / INR / aPTT",
-                "Chronic liver disease with intermediate/major surgery."
-            );
+        addAdvise(
+            "PT / INR / aPTT",
+            "Chronic liver disease with intermediate/major surgery."
+        );
 
-        }
+    }
+
+
+    // ASA III or IV + Major surgery
+    if (
+        data.asa >= 3 &&
+        data.normalizedGrade === "major"
+    ) {
+
+        addAdvise(
+            "PT / INR / aPTT",
+            "ASA III or IV undergoing major surgery: advise coagulation assessment according to clinical condition, bleeding history and medication profile."
+        );
 
     }
 
 }
-
 
 // ============================================================
 // RULE R009
