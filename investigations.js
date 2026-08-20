@@ -300,6 +300,37 @@ function R004_CBC() {
 }
 
 // ============================================================
+// RULE R004_5
+//  ASA3_Minor
+// ============================================================
+
+function R004_5_ASA3_Minor() {
+
+    if (
+        data.asa >= 3 &&
+        data.normalizedGrade === "minor"
+    ) {
+
+        addAdvise(
+            "CBC",
+            "Consider CBC based on clinical assessment and patient-related risk factors."
+        );
+
+        addAdvise(
+            "ECG",
+            "Consider ECG if no ECG result is available from the past 12 months."
+        );
+
+        addAdvise(
+            "Renal function + electrolytes",
+            "Consider renal function testing if the patient is at risk of acute kidney injury (AKI)."
+        );
+
+    }
+
+}
+
+// ============================================================
 // RULE R005
 // KIDNEY FUNCTION + ELECTROLYTES
 // ============================================================
@@ -1112,6 +1143,7 @@ const rules = [
     R002_diabetes,
     R003_pregnancy,
     R004_CBC,
+    R004_5_ASA3_Minor,
     R005_kidney,
     R006_heartFailure,
     R007_ECG,
