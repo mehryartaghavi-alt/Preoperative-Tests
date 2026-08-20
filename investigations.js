@@ -221,7 +221,34 @@ function R001_age() {
 
 }
 
+// ============================================================
+// RULE R001_2
+// HYPERTENSION
+// ============================================================
+//
+// Hypertension alone does NOT automatically trigger
+// routine preoperative investigations.
+//
+// Poorly controlled hypertension or target-organ damage
+// may affect ASA classification.
+//
+// BP ≥180/110 mmHg may warrant postponement of elective
+// surgery, independent of routine preoperative testing.
+//
+// ============================================================
 
+function R001_2_hypertension() {
+
+    if (data.hypertension) {
+
+        addAction(
+            "Hypertension-related clinical assessment",
+            "Hypertension alone does not automatically indicate routine preoperative testing. Poorly controlled hypertension or target-organ damage may affect ASA classification. BP ≥180/110 mmHg should prompt consideration of postponing elective surgery, independent of routine preoperative testing."
+        );
+
+    }
+
+}
 // ============================================================
 // RULE R002
 // DIABETES / HbA1c
@@ -1151,6 +1178,7 @@ function R031_electiveRisk() {
 const rules = [
 
     R001_age,
+    R001_2_hypertension,
     R002_diabetes,
     R003_pregnancy,
     R004_CBC,
