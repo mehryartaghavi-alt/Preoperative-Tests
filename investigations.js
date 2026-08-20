@@ -243,7 +243,7 @@ function R001_2_hypertension() {
 
         addAction(
             "Hypertension-related clinical assessment",
-            "Hypertension alone does not automatically indicate routine preoperative testing. Poorly controlled hypertension or target-organ damage may affect ASA classification. BP ≥180/110 mmHg should prompt consideration of postponing elective surgery, independent of routine preoperative testing."
+            "Hypertension alone does not indicate routine preoperative testing. Uncontrolled hypertension and BP ≥180/110 mmHg should prompt consideration of postponing elective surgery."
         );
 
     }
