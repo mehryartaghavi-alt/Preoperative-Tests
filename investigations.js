@@ -1385,3 +1385,117 @@ console.log(
     data,
     results
 );
+function checkActiveCardiacCondition() {
+
+    const activeCardiac =
+        localStorage.getItem("activeCardiac");
+
+    const activeCardiacType =
+        localStorage.getItem("activeCardiacType");
+
+    const urgency =
+        localStorage.getItem("urgency");
+
+    if (activeCardiac !== "yes") {
+        return;
+    }
+
+
+    const alertBox =
+        document.getElementById("activeCardiacAlert");
+
+    const conditionText =
+        document.getElementById(
+            "activeCardiacConditionText"
+        );
+
+    const actionText =
+        document.getElementById(
+            "activeCardiacAction"
+        );
+
+
+    alertBox.style.display = "block";
+
+
+    let condition = "Active cardiac condition";
+
+    if (activeCardiacType === "acs") {
+
+        condition =
+            "Acute Coronary Syndrome (ACS)";
+
+    }
+
+    else if (activeCardiacType === "arrhythmia") {
+
+        condition =
+            "Unstable / Symptomatic Arrhythmia";
+
+    }
+
+    else if (activeCardiacType === "heartFailure") {
+
+        condition =
+            "Decompensated Heart Failure";
+
+    }
+
+    else if (activeCardiacType === "other") {
+
+        condition =
+            "Other Unstable Cardiac Condition";
+
+    }
+
+
+    conditionText.innerHTML =
+        `<strong>${condition}</strong> has been identified.`;
+
+
+    // ------------------------------------------
+    // ELECTIVE
+    // ------------------------------------------
+
+    if (urgency === "elective") {
+
+        actionText.innerHTML =
+            `Defer elective surgery pending
+            cardiovascular evaluation and optimization.
+            Cardiology consultation and multidisciplinary
+            team discussion are advised.`;
+
+    }
+
+
+    // ------------------------------------------
+    // URGENT
+    // ------------------------------------------
+
+    else if (urgency === "urgent") {
+
+        actionText.innerHTML =
+            `Urgent cardiovascular evaluation and
+            optimization are advised. Multidisciplinary
+            discussion regarding the timing and necessity
+            of surgery is recommended.`;
+
+    }
+
+
+    // ------------------------------------------
+    // EMERGENCY
+    // ------------------------------------------
+
+    else if (urgency === "emergency") {
+
+        actionText.innerHTML =
+            `Proceed with immediate cardiovascular and
+            anesthesia assessment, stabilization and
+            multidisciplinary perioperative management.
+            Emergency surgery should not be delayed
+            solely for elective cardiac testing.`;
+
+    }
+
+}
