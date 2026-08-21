@@ -106,7 +106,88 @@
             <li>Frailty</li>
             <li>Medications</li>
         </ul>
+<!-- ==========================================
+     ACTIVE CARDIAC CONDITION
+     ========================================== -->
 
+<div class="active-cardiac-box">
+
+    <h3>
+        🚨 Active Cardiac Condition
+    </h3>
+
+    <p class="cardiac-question">
+        Does the patient have an active cardiac condition?
+    </p>
+
+    <div class="cardiac-choice">
+
+        <label>
+            <input
+                type="radio"
+                name="activeCardiac"
+                value="no"
+                checked
+            >
+            No
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="activeCardiac"
+                value="yes"
+            >
+            Yes
+        </label>
+
+    </div>
+
+
+    <div
+        id="activeCardiacOptions"
+        style="display:none;"
+    >
+
+        <label>
+            <input
+                type="checkbox"
+                name="activeCardiacType"
+                value="acs"
+            >
+            Acute Coronary Syndrome (ACS)
+        </label>
+
+        <label>
+            <input
+                type="checkbox"
+                name="activeCardiacType"
+                value="arrhythmia"
+            >
+            Unstable / Symptomatic Arrhythmia
+        </label>
+
+        <label>
+            <input
+                type="checkbox"
+                name="activeCardiacType"
+                value="heartFailure"
+            >
+            Decompensated Heart Failure
+        </label>
+
+        <label>
+            <input
+                type="checkbox"
+                name="activeCardiacType"
+                value="other"
+            >
+            Other Unstable Cardiac Condition
+        </label>
+
+    </div>
+
+</div>
 
         <h3>Physical examination should focus on:</h3>
 
