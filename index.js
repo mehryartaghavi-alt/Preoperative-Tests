@@ -79,3 +79,10 @@ STOP-BANG is a screening tool and does not by itself establish a diagnosis of OS
     );
 
 }
+document
+    .getElementById("startBtn")
+    .addEventListener("click", function () {
+
+        window.location.href = "patient.html";
+
+    });
