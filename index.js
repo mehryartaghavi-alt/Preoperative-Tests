@@ -83,6 +83,36 @@ document
     .getElementById("startBtn")
     .addEventListener("click", function () {
 
+        const activeCardiac =
+            document.querySelector(
+                'input[name="activeCardiac"]:checked'
+            );
+
+        if (activeCardiac) {
+
+            localStorage.setItem(
+                "activeCardiac",
+                activeCardiac.value
+            );
+
+        }
+
+
+        const activeCardiacType =
+            document.querySelector(
+                'input[name="activeCardiacType"]:checked'
+            );
+
+        if (activeCardiacType) {
+
+            localStorage.setItem(
+                "activeCardiacType",
+                activeCardiacType.value
+            );
+
+        }
+
+
         window.location.href = "patient.html";
 
     });
