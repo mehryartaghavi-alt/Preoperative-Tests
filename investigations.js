@@ -1501,3 +1501,16 @@ function checkActiveCardiacCondition() {
 }
 console.log("Active Cardiac:", localStorage.getItem("activeCardiac"));
 console.log("Cardiac Type:", localStorage.getItem("activeCardiacType"));
+const activeCardiac =
+    localStorage.getItem("activeCardiac");
+
+if (activeCardiac === "yes") {
+
+    const alertBox =
+        document.getElementById("activeCardiacAlert");
+
+    if (alertBox) {
+        alertBox.style.display = "block";
+    }
+
+}
