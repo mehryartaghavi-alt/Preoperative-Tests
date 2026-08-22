@@ -1499,3 +1499,5 @@ function checkActiveCardiacCondition() {
     }
 
 }
+console.log("Active Cardiac:", localStorage.getItem("activeCardiac"));
+console.log("Cardiac Type:", localStorage.getItem("activeCardiacType"));
