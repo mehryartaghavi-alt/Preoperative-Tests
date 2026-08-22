@@ -1514,3 +1514,42 @@ if (activeCardiac === "yes") {
     }
 
 }
+const activeCardiacType =
+    localStorage.getItem("activeCardiacType");
+
+const conditionText =
+    document.getElementById(
+        "activeCardiacConditionText"
+    );
+
+if (conditionText) {
+
+    if (activeCardiacType === "acs") {
+
+        conditionText.innerHTML =
+            "<strong>Acute Coronary Syndrome (ACS)</strong> has been identified.";
+
+    }
+
+    else if (activeCardiacType === "arrhythmia") {
+
+        conditionText.innerHTML =
+            "<strong>Unstable / Symptomatic Arrhythmia</strong> has been identified.";
+
+    }
+
+    else if (activeCardiacType === "heartFailure") {
+
+        conditionText.innerHTML =
+            "<strong>Decompensated Heart Failure</strong> has been identified.";
+
+    }
+
+    else if (activeCardiacType === "other") {
+
+        conditionText.innerHTML =
+            "<strong>Other Unstable Cardiac Condition</strong> has been identified.";
+
+    }
+
+}
