@@ -262,6 +262,10 @@ function R002_diabetes() {
             "HbA1c, FBS",
             "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months. FBS, at the morning of surgery."
                        );
+addAction(
+            "Preferred HbA1c for elective surgery is <8%",
+            "Perioperative target for FBS is 100–180 mg/dL (5.6–10 mmol/L)."
+        );
 
     }
 
