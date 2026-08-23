@@ -1553,3 +1553,17 @@ if (conditionText) {
     }
 
 }
+const actionText =
+    document.getElementById(
+        "activeCardiacAction"
+    );
+
+if (
+    actionText &&
+    localStorage.getItem("activeCardiac") === "yes"
+) {
+
+    actionText.innerHTML =
+        "Defer surgery, obtain Cardiology consultation, and perform appropriate cardiovascular evaluation and optimization before proceeding.";
+
+}
