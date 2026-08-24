@@ -975,8 +975,7 @@ function R022_stressTest() {
 function R023_echo() {
 
     if (
-        data.heartFailure ||
-        data.valvular
+                data.valvular
     ) {
 
         addAdvise(
