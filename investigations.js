@@ -780,22 +780,28 @@ function R016_obesityLabs() {
 
 }
 
-
 // ============================================================
 // RULE R017
-// CAD
+// CORONARY ARTERY DISEASE (CAD)
+// Stable CAD / No active cardiac symptoms
 // ============================================================
 
 function R017_CAD() {
 
     if (data.cad) {
 
+        // General cardiovascular risk assessment
         addAdvise(
             "Cardiovascular risk assessment",
             "Known coronary artery disease requires perioperative cardiovascular risk assessment."
         );
 
-        if (data.mets === "poor" || data.mets === "unknown") {
+
+        // Poor or unknown functional capacity
+        if (
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
 
             addAction(
                 "Consider formal cardiac risk assessment",
@@ -804,11 +810,52 @@ function R017_CAD() {
 
         }
 
+
+        // ----------------------------------------------------
+        // Intermediate or major surgery → ECG
+        // ----------------------------------------------------
+
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addAdvise(
+                "ECG",
+                "Consider preoperative ECG in patients with stable coronary artery disease undergoing intermediate or major surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Major surgery + poor/unknown METs
+        // → Stress testing + Cardiology consultation
+        // ----------------------------------------------------
+
+        if (
+            data.normalizedGrade === "major" &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "Stress testing",
+                "Consider stress testing if the result is expected to change management."
+            );
+
+            addAdvise(
+                "Cardiology consultation",
+                "Consider cardiology consultation in patients with stable coronary artery disease undergoing major surgery with poor or unknown functional capacity."
+            );
+
+        }
+
     }
 
 }
-
-
 // ============================================================
 // RULE R018
 // HEART FAILURE
