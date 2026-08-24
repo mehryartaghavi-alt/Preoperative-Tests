@@ -790,14 +790,11 @@ function R017_CAD() {
 
     if (data.cad) {
 
-        // ----------------------------------------------------
-        // Major surgery + poor/unknown METs
-        // → Stress testing + Cardiology consultation
-        // ----------------------------------------------------
-
         if (
-           data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major" &&
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
             (
                 data.mets === "poor" ||
                 data.mets === "unknown"
@@ -811,7 +808,7 @@ function R017_CAD() {
 
             addAdvise(
                 "Cardiology consultation",
-                "Consider cardiology consultation in patients with stable coronary artery disease undergoing major surgery with poor or unknown functional capacity."
+                "Consider cardiology consultation in patients with stable coronary artery disease undergoing intermediate or major surgery with poor or unknown functional capacity."
             );
 
         }
