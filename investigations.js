@@ -423,15 +423,11 @@ function R006_heartFailure() {
         ) {
 
             addRequired(
-                "Electrolytes",
+                "Renal function + electrolytes",
                 "Heart failure with intermediate or major surgery."
             );
 
-            addRequired(
-                "Renal function",
-                "Heart failure with intermediate or major surgery."
-            );
-
+            
         }
 
     }
