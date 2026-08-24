@@ -825,7 +825,17 @@ function R018_HF() {
             "Assess heart failure stability",
             "Proceed only after assessment of current symptoms, volume status and clinical stability."
         );
+ if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
 
+            addAdvise(
+                "BNP / NT-proBNP",
+                "Preoperative cardiac biomarker assessment and abnormal threshold: BNP >92 pg/mL or NT-proBNP ≥300 pg/mL."
+            );
+
+        }
         if (
             data.mets === "poor" ||
             data.mets === "unknown"
