@@ -790,50 +790,13 @@ function R017_CAD() {
 
     if (data.cad) {
 
-        // General cardiovascular risk assessment
-        addAdvise(
-            "Cardiovascular risk assessment",
-            "Known coronary artery disease requires perioperative cardiovascular risk assessment."
-        );
-
-
-        // Poor or unknown functional capacity
-        if (
-            data.mets === "poor" ||
-            data.mets === "unknown"
-        ) {
-
-            addAction(
-                "Consider formal cardiac risk assessment",
-                "Known CAD with poor or unknown functional capacity."
-            );
-
-        }
-
-
-        // ----------------------------------------------------
-        // Intermediate or major surgery → ECG
-        // ----------------------------------------------------
-
-        if (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        ) {
-
-            addAdvise(
-                "ECG",
-                "Consider preoperative ECG in patients with stable coronary artery disease undergoing intermediate or major surgery."
-            );
-
-        }
-
-
         // ----------------------------------------------------
         // Major surgery + poor/unknown METs
         // → Stress testing + Cardiology consultation
         // ----------------------------------------------------
 
         if (
+           data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major" &&
             (
                 data.mets === "poor" ||
