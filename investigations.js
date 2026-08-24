@@ -832,7 +832,7 @@ function R018_HF() {
         ) {
 
             addAdvise(
-                "Cardiac evaluation",
+                "Cardiac consultation",
                 "Heart failure with poor or unknown functional capacity."
             );
 
