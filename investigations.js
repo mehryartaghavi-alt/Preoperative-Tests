@@ -862,11 +862,7 @@ function R019_arrhythmia() {
 
     if (data.arrhythmia) {
 
-        addAdvise(
-            "ECG",
-            "Known arrhythmia."
-        );
- addAdvise(
+       addAdvise(
         "Cardiology consultation",
         "Consider for new, symptomatic arrhythmia before elective surgery."
     );
