@@ -866,7 +866,10 @@ function R019_arrhythmia() {
             "ECG",
             "Known arrhythmia."
         );
-
+ addAdvise(
+        "Cardiology consultation",
+        "Consider for new, symptomatic arrhythmia before elective surgery."
+    );
         addAction(
             "Assess rhythm stability and rate control",
             "Perioperative arrhythmia management should be based on current rhythm, symptoms and hemodynamic stability."
