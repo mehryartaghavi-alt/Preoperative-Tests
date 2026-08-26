@@ -894,24 +894,6 @@ function R020_valvular() {
             "Consider echocardiographic assessment in patients with known valvular heart disease before non-cardiac surgery."
         );
 
-
-        // ----------------------------------------------------
-        // Grade 2 or 3 → ECG
-        // ----------------------------------------------------
-
-        if (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        ) {
-
-            addAdvise(
-                "ECG",
-                "Consider preoperative ECG in patients with valvular heart disease undergoing intermediate or major surgery."
-            );
-
-        }
-
-
         // ----------------------------------------------------
         // Grade 3 → Cardiology consultation
         // OR Grade 2 + poor/unknown METs
