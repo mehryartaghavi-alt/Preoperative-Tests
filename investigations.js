@@ -885,19 +885,52 @@ function R020_valvular() {
 
     if (data.valvular) {
 
-        addAction(
-            "Assess severity of valvular disease",
-            "Review symptoms, previous echocardiography and current cardiac status."
+        // ----------------------------------------------------
+        // Echocardiography
+        // ----------------------------------------------------
+
+        addAdvise(
+            "Echocardiography",
+            "Consider echocardiographic assessment in patients with known valvular heart disease before non-cardiac surgery."
         );
 
+
+        // ----------------------------------------------------
+        // Grade 2 or 3 → ECG
+        // ----------------------------------------------------
+
         if (
-            data.mets === "poor" ||
-            data.mets === "unknown"
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
         ) {
 
             addAdvise(
-                "Cardiac evaluation",
-                "Known valvular disease with poor or unknown functional capacity."
+                "ECG",
+                "Consider preoperative ECG in patients with valvular heart disease undergoing intermediate or major surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Grade 3 → Cardiology consultation
+        // OR Grade 2 + poor/unknown METs
+        // ----------------------------------------------------
+
+        if (
+            data.normalizedGrade === "major" ||
+            (
+                data.normalizedGrade === "intermediate" &&
+                (
+                    data.mets === "poor" ||
+                    data.mets === "unknown"
+                )
+            )
+        ) {
+
+            addAdvise(
+                "Cardiology consultation",
+                "Consider cardiology consultation in patients with valvular heart disease undergoing major surgery, or intermediate surgery with poor or unknown functional capacity."
             );
 
         }
@@ -905,8 +938,6 @@ function R020_valvular() {
     }
 
 }
-
-
 // ============================================================
 // RULE R021
 // CVA
@@ -975,26 +1006,6 @@ function R022_stressTest() {
 
 }
 
-
-// ============================================================
-// RULE R023
-// ECHO
-// ============================================================
-
-function R023_echo() {
-
-    if (
-                data.valvular
-    ) {
-
-        addAdvise(
-            "Echocardiography",
-            "Consider when clinically indicated by symptoms, suspected significant structural heart disease, change in clinical status or absence of recent appropriate assessment."
-        );
-
-    }
-
-}
 
 
 // ============================================================
@@ -1216,7 +1227,7 @@ const rules = [
     R020_valvular,
     R021_CVA,
     R022_stressTest,
-    R023_echo,
+   
     R024_smoking,
     R025_CKD,
     R026_liver,
