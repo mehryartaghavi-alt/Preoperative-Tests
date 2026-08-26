@@ -887,22 +887,27 @@ function R020_valvular() {
 
         // ----------------------------------------------------
         // Echocardiography
+        // Grade 1 + good METs → no Echo
         // ----------------------------------------------------
- if (
+
+        if (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major" ||
             data.mets === "poor" ||
             data.mets === "unknown"
         ) {
 
-        addAdvise(
-            "Echocardiography",
-            "Consider echocardiographic assessment in patients with known valvular heart disease before non-cardiac surgery."
-        );
+            addAdvise(
+                "Echocardiography",
+                "Consider echocardiographic assessment in patients with known valvular heart disease before non-cardiac surgery."
+            );
+
+        }
+
 
         // ----------------------------------------------------
-        // Grade 3 → Cardiology consultation
-        // OR Grade 2 + poor/unknown METs
+        // Cardiology consultation
+        // Grade 3 OR Grade 2 + poor/unknown METs
         // ----------------------------------------------------
 
         if (
