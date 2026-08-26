@@ -888,6 +888,12 @@ function R020_valvular() {
         // ----------------------------------------------------
         // Echocardiography
         // ----------------------------------------------------
+ if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major" ||
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
 
         addAdvise(
             "Echocardiography",
