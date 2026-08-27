@@ -977,7 +977,6 @@ function R022_stressTest() {
     const cardiovascularRisk =
         data.cad ||
         data.heartFailure ||
-        data.valvular ||
         data.cva ||
         data.asa >= 3;
 
