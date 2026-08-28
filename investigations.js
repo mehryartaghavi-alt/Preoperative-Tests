@@ -887,10 +887,10 @@ function R020_valvular() {
 
         // ----------------------------------------------------
         // Echocardiography
-        // Grade 1 + good METs → no Echo
+        // Grade 2 or 3
+        // OR poor/unknown METs
         // ----------------------------------------------------
 
-        
         if (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major" ||
@@ -907,38 +907,55 @@ function R020_valvular() {
 
 
         // ----------------------------------------------------
+        // Echocardiography
+        // ASA III + Grade 1
+        // ----------------------------------------------------
+
+        if (
+            data.asa === 3 &&
+            data.normalizedGrade === "minor"
+        ) {
+
+            addAdvise(
+                "Echocardiography",
+                "Consider echocardiographic assessment in patients with valvular heart disease who are ASA III undergoing minor surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
         // Cardiology consultation
-        // Grade 3 OR Grade 2 + poor/unknown METs
+        // Grade 3 + poor/unknown METs
+        // OR Grade 2 + ASA III + poor/unknown METs
         // ----------------------------------------------------
 
-        // ----------------------------------------------------
-// Cardiology consultation
-// Grade 3 + poor/unknown METs
-// OR Grade 2 + ASA III + poor/unknown METs
-// ----------------------------------------------------
+        if (
+            (
+                data.normalizedGrade === "major" &&
+                (
+                    data.mets === "poor" ||
+                    data.mets === "unknown"
+                )
+            ) ||
+            (
+                data.normalizedGrade === "intermediate" &&
+                data.asa === 3 &&
+                (
+                    data.mets === "poor" ||
+                    data.mets === "unknown"
+                )
+            )
+        ) {
 
-if (
-    (
-        data.normalizedGrade === "major" &&
-        (
-            data.mets === "poor" ||
-            data.mets === "unknown"
-        )
-    ) ||
-    (
-        data.normalizedGrade === "intermediate" &&
-        data.asa === 3 &&
-        (
-            data.mets === "poor" ||
-            data.mets === "unknown"
-        )
-    )
-) {
+            addAdvise(
+                "Cardiology consultation",
+                "Consider cardiology consultation in patients with valvular heart disease undergoing major surgery with poor or unknown functional capacity, or intermediate surgery with ASA III and poor or unknown functional capacity."
+            );
 
-    addAdvise(
-        "Cardiology consultation",
-        "Consider cardiology consultation in patients with valvular heart disease undergoing major surgery with poor or unknown functional capacity, or intermediate surgery with ASA III and poor or unknown functional capacity."
-    );
+        }
+
+    }
 
 }
 // ============================================================
