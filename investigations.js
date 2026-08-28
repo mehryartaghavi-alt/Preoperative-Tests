@@ -910,25 +910,34 @@ function R020_valvular() {
         // Grade 3 OR Grade 2 + poor/unknown METs
         // ----------------------------------------------------
 
-        if (
-            data.normalizedGrade === "major" ||
-            (
-                data.normalizedGrade === "intermediate" &&
-                (
-                    data.mets === "poor" ||
-                    data.mets === "unknown"
-                )
-            )
-        ) {
+        // ----------------------------------------------------
+// Cardiology consultation
+// Grade 3 + poor/unknown METs
+// OR Grade 2 + ASA III + poor/unknown METs
+// ----------------------------------------------------
 
-            addAdvise(
-                "Cardiology consultation",
-                "Consider cardiology consultation in patients with valvular heart disease undergoing major surgery, or intermediate surgery with poor or unknown functional capacity."
-            );
+if (
+    (
+        data.normalizedGrade === "major" &&
+        (
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        )
+    ) ||
+    (
+        data.normalizedGrade === "intermediate" &&
+        data.asa === 3 &&
+        (
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        )
+    )
+) {
 
-        }
-
-    }
+    addAdvise(
+        "Cardiology consultation",
+        "Consider cardiology consultation in patients with valvular heart disease undergoing major surgery with poor or unknown functional capacity, or intermediate surgery with ASA III and poor or unknown functional capacity."
+    );
 
 }
 // ============================================================
