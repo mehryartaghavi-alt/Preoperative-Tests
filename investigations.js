@@ -885,6 +885,10 @@ function R020_valvular() {
 
     if (data.valvular) {
 
+        addAction(
+    "Valvular heart disease reassessment",
+    "If valvular disease has worsened, symptoms have changed, or echocardiography has not been performed within the past year, consider repeat echocardiographic assessment before elective surgery."
+);
         // ----------------------------------------------------
         // Echocardiography
         // Grade 2 or 3
@@ -959,10 +963,7 @@ function R020_valvular() {
 
 }
 
-addAction(
-    "Valvular heart disease reassessment",
-    "If valvular disease has worsened, symptoms have changed, or echocardiography has not been performed within the past year, consider repeat echocardiographic assessment before elective surgery."
-);
+
 // ============================================================
 // RULE R021
 // CVA
