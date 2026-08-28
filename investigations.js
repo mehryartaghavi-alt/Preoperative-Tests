@@ -890,17 +890,7 @@ function R020_valvular() {
         // Grade 1 + good METs → no Echo
         // ----------------------------------------------------
 
-        if (
-    data.asa === 3 &&
-    data.normalizedGrade === "minor"
-) {
-
-    addAdvise(
-        "Echocardiography",
-        "Consider echocardiographic assessment in patients with valvular heart disease who are ASA III undergoing minor surgery."
-    );
-
-}
+        
         if (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major" ||
