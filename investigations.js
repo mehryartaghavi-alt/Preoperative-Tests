@@ -958,6 +958,11 @@ function R020_valvular() {
     }
 
 }
+
+addAction(
+    "Valvular heart disease reassessment",
+    "If valvular disease has worsened, symptoms have changed, or echocardiography has not been performed within the past year, consider repeat echocardiographic assessment before elective surgery."
+);
 // ============================================================
 // RULE R021
 // CVA
