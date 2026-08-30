@@ -1089,7 +1089,10 @@ function R025_CKD() {
 
         }
 
-
+addAction(
+    "Dialysis and preoperative electrolyte assessment",
+    "Perform dialysis 12–24 hours before surgery when appropriate and recheck serum sodium and potassium on the morning of surgery."
+);
         // ----------------------------------------------------
         // Grade 3 → ECG Required
         // ----------------------------------------------------
