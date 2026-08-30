@@ -1057,23 +1057,58 @@ function R024_smoking() {
 // CKD
 // ============================================================
 
-function R025_CKD() {
+function R021_CKD() {
 
     if (data.ckd) {
 
-        addRequired(
-            "BUN / Creatinine / eGFR / Electrolytes",
-            "Known chronic kidney disease."
-        );
+        // ----------------------------------------------------
+        // Renal function + electrolytes
+        // Grade 2 or 3
+        // OR poor/unknown METs
+        // ----------------------------------------------------
 
         if (
             data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
+            data.normalizedGrade === "major" ||
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
+
+            addRequired(
+                "Renal function + eGGR + electrolytes",
+                "Chronic kidney disease with intermediate or major surgery, or poor/unknown functional capacity."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Grade 2 → ECG Advice
+        // ----------------------------------------------------
+
+        if (
+            data.normalizedGrade === "intermediate"
         ) {
 
             addAdvise(
                 "ECG",
-                "CKD with intermediate/major surgery."
+                "Advise preoperative ECG in patients with chronic kidney disease undergoing intermediate surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Grade 3 → ECG Required
+        // ----------------------------------------------------
+
+        if (
+            data.normalizedGrade === "major"
+        ) {
+
+            addRequired(
+                "ECG",
+                "Chronic kidney disease with major surgery."
             );
 
         }
@@ -1081,8 +1116,6 @@ function R025_CKD() {
     }
 
 }
-
-
 // ============================================================
 // RULE R026
 // LIVER DISEASE
