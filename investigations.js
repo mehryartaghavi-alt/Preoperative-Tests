@@ -384,15 +384,7 @@ function R005_kidney() {
 
     }
 
-    if (data.ckd) {
-
-        addRequired(
-            "Renal function + electrolytes",
-            "Known chronic kidney disease."
-        );
-
-    }
-
+    
     // Grade 3 + ASA I → clinical assessment for AKI risk
     if (
         data.asa === 1 &&
