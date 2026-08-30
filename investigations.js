@@ -1057,7 +1057,7 @@ function R024_smoking() {
 // CKD
 // ============================================================
 
-function R021_CKD() {
+function R025_CKD() {
 
     if (data.ckd) {
 
