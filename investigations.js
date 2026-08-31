@@ -527,22 +527,6 @@ function R008_coagulation() {
     }
 
 
-    // Chronic liver disease
-    if (
-        data.liver &&
-        (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        )
-    ) {
-
-        addAdvise(
-            "PT / INR / aPTT",
-            "Chronic liver disease with intermediate/major surgery."
-        );
-
-    }
-
 
     // ASA III or IV + Major surgery
     if (
