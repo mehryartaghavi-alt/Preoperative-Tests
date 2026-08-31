@@ -1120,34 +1120,104 @@ function R026_liver() {
 
     if (data.liver) {
 
-        addRequired(
-            "Liver function assessment",
-            "Known chronic liver disease/cirrhosis."
-        );
+        // ----------------------------------------------------
+        // Minor surgery
+        // ----------------------------------------------------
 
-        if (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        ) {
+        if (data.normalizedGrade === "minor") {
+
+            addAdvise(
+                "CBC",
+                "Consider CBC based on clinical assessment and patient-related risk factors."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Mild surgery
+        // ----------------------------------------------------
+
+        if (data.normalizedGrade === "mild") {
 
             addRequired(
-                "Albumin",
-                "Chronic liver disease with intermediate/major surgery."
+                "CBC",
+                "Liver disease with mild surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Liver disease with mild surgery."
             );
 
             addAdvise(
-                "PT / INR / aPTT",
-                "Chronic liver disease with intermediate/major surgery."
+                "LFT",
+                "Consider liver function assessment in patients with liver disease undergoing mild surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Intermediate surgery
+        // ----------------------------------------------------
+
+        if (data.normalizedGrade === "intermediate") {
+
+            addRequired(
+                "CBC",
+                "Liver disease with intermediate surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Liver disease with intermediate surgery."
+            );
+
+            addAdvise(
+                "LFT",
+                "Consider liver function assessment in patients with liver disease undergoing intermediate surgery."
+            );
+
+            addAdvise(
+                "PT / PTT / INR",
+                "Consider coagulation testing in patients with chronic liver disease undergoing intermediate surgery."
+            );
+
+        }
+
+
+        // ----------------------------------------------------
+        // Major surgery
+        // ----------------------------------------------------
+
+        if (data.normalizedGrade === "major") {
+
+            addRequired(
+                "CBC",
+                "Liver disease with major surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Liver disease with major surgery."
+            );
+
+            addAdvise(
+                "LFT",
+                "Consider liver function assessment in patients with liver disease undergoing major surgery."
+            );
+
+            addAdvise(
+                "PT / PTT / INR",
+                "Consider coagulation testing in patients with chronic liver disease undergoing major surgery."
             );
 
         }
 
     }
 
-}
-
-
-// ============================================================
+}// ============================================================
 // RULE R027
 // THYROID
 // ============================================================
