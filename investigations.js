@@ -690,22 +690,73 @@ function R013_thoracic() {
 
 function R014_respiratoryAction() {
 
-    if (
-        data.respiratory &&
-        data.asa >= 3 &&
-        data.normalizedGrade === "major"
-    ) {
+    if (data.respiratory) {
 
-        addAction(
-            "Respiratory consultation",
-            "Consider pulmonary consultation when respiratory disease is clinically significant or inadequately optimized."
-        );
-
-        if (data.urgency === "elective") {
+        // Respiratory assessment for major surgery
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major"
+        ) {
 
             addAction(
-                "Optimize respiratory condition before elective surgery",
-                "Elective major surgery may need postponement when active respiratory disease is not adequately controlled."
+                "Respiratory consultation",
+                "Consider pulmonary consultation when respiratory disease is clinically significant or inadequately optimized."
+            );
+
+            if (data.urgency === "elective") {
+
+                addAction(
+                    "Optimize respiratory condition before elective surgery",
+                    "Elective major surgery may need postponement when active respiratory disease is not adequately controlled."
+                );
+
+            }
+        }
+
+
+        // Spirometry
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major" ||
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
+
+            addAdvise(
+                "Spirometry",
+                "Consider spirometry in patients with respiratory disease when pulmonary function assessment may help optimize perioperative management."
+            );
+
+        }
+
+
+        // Chest X-ray
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major"
+        ) {
+
+            addAdvise(
+                "Chest X-ray",
+                "Consider chest X-ray when clinically indicated in patients with significant respiratory disease undergoing major surgery."
+            );
+
+        }
+
+
+        // ABG
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major" &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "ABG",
+                "Consider arterial blood gas analysis when severe respiratory impairment, hypoxemia, or hypercapnia is suspected."
             );
 
         }
@@ -713,8 +764,6 @@ function R014_respiratoryAction() {
     }
 
 }
-
-
 // ============================================================
 // RULE R015
 // OBESITY / OSA
