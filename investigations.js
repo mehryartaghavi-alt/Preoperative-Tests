@@ -966,21 +966,107 @@ function R021_CVA() {
 
     if (data.cva) {
 
-        addRequired(
-            "ECG",
-            "Cerebrovascular disease with increased cardiovascular risk."
-        );
+        // Minor surgery
+        if (data.normalizedGrade === "minor") {
+            // No specific tests
+        }
 
-        addAdvise(
-            "Cardiovascular risk assessment",
-            "History of cerebrovascular disease."
-        );
 
+        // Mild surgery
+        if (data.normalizedGrade === "mild") {
+
+            addAdvise(
+                "CBC",
+                "Consider CBC in patients with a history of cerebrovascular disease undergoing mild surgery."
+            );
+
+            addAdvise(
+                "ECG",
+                "Consider preoperative ECG in patients with a history of cerebrovascular disease undergoing mild surgery."
+            );
+        }
+
+
+        // Intermediate surgery
+        if (data.normalizedGrade === "intermediate") {
+
+            addRequired(
+                "CBC",
+                "History of cerebrovascular disease with intermediate surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "History of cerebrovascular disease with intermediate surgery."
+            );
+
+            addRequired(
+                "ECG",
+                "History of cerebrovascular disease with intermediate surgery."
+            );
+        }
+
+
+        // Major surgery
+        if (data.normalizedGrade === "major") {
+
+            addRequired(
+                "CBC",
+                "History of cerebrovascular disease with major surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "History of cerebrovascular disease with major surgery."
+            );
+
+            addRequired(
+                "ECG",
+                "History of cerebrovascular disease with major surgery."
+            );
+        }
+
+
+        // Poor or unknown functional capacity
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "Neurology consultation",
+                "Consider neurology consultation in patients with previous cerebrovascular disease and poor or unknown functional capacity undergoing intermediate or major surgery."
+            );
+
+            addAdvise(
+                "Echocardiography",
+                "Consider echocardiographic assessment in patients with previous cerebrovascular disease and poor or unknown functional capacity undergoing intermediate or major surgery."
+            );
+        }
+
+
+        // Anticoagulant therapy
+        if (
+            data.anticoagulant &&
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            )
+        ) {
+
+            addAdvise(
+                "PT / PTT / INR",
+                "Consider coagulation testing in patients receiving anticoagulant therapy undergoing intermediate or major surgery."
+            );
+        }
     }
-
 }
-
-
 // ============================================================
 // RULE R022
 // STRESS TEST
