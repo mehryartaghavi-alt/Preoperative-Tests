@@ -514,20 +514,48 @@ if (
 // COAGULATION
 // ============================================================
 
-function R008_coagulation() {
+if (data.coagulationDisorder) {
 
-    // Known bleeding / coagulation disorder
-    if (data.bleeding) {
+    // All surgical grades
+    addRequired(
+        "CBC + Platelet count",
+        "Known coagulation disorder."
+    );
 
-        addRequired(
-            "PT / INR / aPTT",
-            "Known bleeding or coagulation disorder."
+    addRequired(
+        "PT / INR",
+        "Known coagulation disorder."
+    );
+
+    addRequired(
+        "aPTT / PTT",
+        "Known coagulation disorder."
+    );
+
+    // Intermediate and major surgery
+    if (
+        data.normalizedGrade === "intermediate" ||
+        data.normalizedGrade === "major"
+    ) {
+
+        addAdvise(
+            "Fibrinogen",
+            "Consider fibrinogen measurement according to the type and severity of the coagulation disorder and the expected blood loss."
         );
 
+        addAdvise(
+            "Hematology consultation",
+            "Consider hematology consultation for perioperative hemostatic planning."
+        );
     }
 
+    // Major surgery
+    if (data.normalizedGrade === "major") {
 
-
+        addAction(
+            "Perioperative hemostatic planning",
+            "Establish a specific perioperative hemostatic plan based on the type of coagulation disorder, bleeding history, current treatment, and planned surgery."
+        );
     // ASA III or IV + Major surgery
     if (
         data.asa >= 3 &&
