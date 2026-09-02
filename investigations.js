@@ -622,38 +622,6 @@ function R011_bloodLoss() {
 
 
 // ============================================================
-// RULE R012
-// RESPIRATORY DISEASE
-// ============================================================
-
-function R012_respiratory() {
-
-    if (data.respiratory) {
-
-        if (data.asa >= 3) {
-
-            addAction(
-                "Respiratory assessment / senior anesthesia review",
-                "ASA III/IV with known or suspected respiratory disease."
-            );
-
-        }
-
-        if (data.normalizedGrade === "major") {
-
-            addAdvise(
-                "Pulmonary evaluation",
-                "Major surgery with respiratory disease."
-            );
-
-        }
-
-    }
-
-}
-
-
-// ============================================================
 // RULE R013
 // THORACIC SURGERY
 // ============================================================
@@ -1372,7 +1340,6 @@ const rules = [
     R009_albumin,
     R010_anemia,
     R011_bloodLoss,
-    R012_respiratory,
     R013_thoracic,
     R014_respiratoryAction,
     R015_obesityOSA,
