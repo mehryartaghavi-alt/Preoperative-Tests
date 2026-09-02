@@ -513,8 +513,8 @@ if (
 // RULE R008
 // COAGULATION
 // ============================================================
-
-if (data.coagulationDisorder) {
+function R008_coagulation() {
+if (data.bleeding) {
 
     // All surgical grades
     addRequired(
