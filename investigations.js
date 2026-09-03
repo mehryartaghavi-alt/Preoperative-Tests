@@ -518,22 +518,16 @@ function R008_coagulation() {
 
         // All surgical grades
         addRequired(
-            "CBC + Platelet count",
+            "CBC",
             "Known coagulation disorder."
         );
 
         addRequired(
-            "PT / INR",
+            "PT / PTT/ INR",
             "Known coagulation disorder."
         );
 
-        addRequired(
-            "aPTT / PTT",
-            "Known coagulation disorder."
-        );
-
-
-        // Intermediate and major surgery
+                // Intermediate and major surgery
         if (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major"
