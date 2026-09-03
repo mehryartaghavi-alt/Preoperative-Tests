@@ -1517,6 +1517,57 @@ function R031_electiveRisk() {
 
 }
 
+function R032_vascular() {
+
+    if (data.surgicalType === "vascular") {
+
+        // Grade 2 and 3
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addRequired(
+                "CBC",
+                "Intermediate or major vascular surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Intermediate or major vascular surgery."
+            );
+
+            addRequired(
+                "ECG",
+                "Intermediate or major vascular surgery."
+            );
+        }
+
+        // Poor or unknown functional capacity
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "Stress testing",
+                "Consider stress testing when functional capacity is poor or unknown and the result is expected to change perioperative management."
+            );
+
+            addAdvise(
+                "Cardiology consultation",
+                "Consider cardiology consultation according to cardiovascular risk and functional capacity."
+            );
+        }
+
+    }
+}
 
 // ============================================================
 // RUN ALL RULES
@@ -1556,7 +1607,7 @@ const rules = [
     R029_neurosurgery,
     R030_emergency,
     R031_electiveRisk
-
+R032_vascular
 ];
 
 rules.forEach(rule => rule());
