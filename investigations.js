@@ -1517,6 +1517,11 @@ function R031_electiveRisk() {
 
 }
 
+// ============================================================
+// RULE R032
+// VASCULAR SURGERY 
+// ============================================================
+
 function R032_vascular() {
 
     if (data.surgicalType === "vascular") {
@@ -1607,7 +1612,7 @@ const rules = [
     R029_neurosurgery,
     R030_emergency,
     R031_electiveRisk
-R032_vascular
+    R032_vascular
 ];
 
 rules.forEach(rule => rule());
