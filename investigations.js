@@ -1611,7 +1611,7 @@ const rules = [
     R028_cardiacSurgery,
     R029_neurosurgery,
     R030_emergency,
-    R031_electiveRisk
+    R031_electiveRisk,
     R032_vascular
 ];
 
