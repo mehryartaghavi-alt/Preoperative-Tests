@@ -317,7 +317,6 @@ function R004_CBC() {
 
     if (
         data.anemia ||
-        data.bleeding ||
         data.bloodLoss === "high"
     ) {
 
