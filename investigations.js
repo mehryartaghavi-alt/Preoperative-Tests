@@ -1502,7 +1502,11 @@ rules.forEach(rule => rule());
 // ============================================================
 // DEDUPLICATE
 // ============================================================
-
+const finalResults = uniqueResults(
+    results.required,
+    results.advise,
+    results.actions
+);
 results.required = uniqueResults(results.required);
 results.advise = uniqueResults(results.advise);
 results.actions = uniqueResults(results.actions);
