@@ -171,28 +171,63 @@ function addAction(action, reason) {
 // DEDUPLICATION
 // ============================================================
 
-function uniqueResults(array) {
+function uniqueResults(required, advise, actions) {
 
-    const seen = new Set();
+    const requiredSeen = new Set();
+    const adviseSeen = new Set();
+    const actionSeen = new Set();
 
-    return array.filter(item => {
+    // Required has priority
+    const uniqueRequired = required.filter(item => {
 
-        const key =
-            item.test || item.action;
+        const key = item.test;
 
-        if (seen.has(key)) {
+        if (requiredSeen.has(key)) {
             return false;
         }
 
-        seen.add(key);
-
+        requiredSeen.add(key);
         return true;
-
     });
 
+
+    // Advice
+    const uniqueAdvise = advise.filter(item => {
+
+        const key = item.test;
+
+        if (
+            requiredSeen.has(key) ||
+            adviseSeen.has(key)
+        ) {
+            return false;
+        }
+
+        adviseSeen.add(key);
+        return true;
+    });
+
+
+    // Actions
+    const uniqueActions = actions.filter(item => {
+
+        const key = item.action;
+
+        if (actionSeen.has(key)) {
+            return false;
+        }
+
+        actionSeen.add(key);
+        return true;
+    });
+
+
+    return {
+        required: uniqueRequired,
+        advise: uniqueAdvise,
+        actions: uniqueActions
+    };
 }
-
-
 // ============================================================
 // RULE R001
 // AGE
