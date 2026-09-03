@@ -514,63 +514,55 @@ if (
 // COAGULATION
 // ============================================================
 function R008_coagulation() {
-if (data.bleeding) {
 
-    // All surgical grades
-    addRequired(
-        "CBC + Platelet count",
-        "Known coagulation disorder."
-    );
+    if (data.bleeding) {
 
-    addRequired(
-        "PT / INR",
-        "Known coagulation disorder."
-    );
-
-    addRequired(
-        "aPTT / PTT",
-        "Known coagulation disorder."
-    );
-
-    // Intermediate and major surgery
-    if (
-        data.normalizedGrade === "intermediate" ||
-        data.normalizedGrade === "major"
-    ) {
-
-        addAdvise(
-            "Fibrinogen",
-            "Consider fibrinogen measurement according to the type and severity of the coagulation disorder and the expected blood loss."
+        // All surgical grades
+        addRequired(
+            "CBC + Platelet count",
+            "Known coagulation disorder."
         );
 
-        addAdvise(
-            "Hematology consultation",
-            "Consider hematology consultation for perioperative hemostatic planning."
+        addRequired(
+            "PT / INR",
+            "Known coagulation disorder."
         );
-    }
 
-    // Major surgery
-    if (data.normalizedGrade === "major") {
-
-        addAction(
-            "Perioperative hemostatic planning",
-            "Establish a specific perioperative hemostatic plan based on the type of coagulation disorder, bleeding history, current treatment, and planned surgery."
+        addRequired(
+            "aPTT / PTT",
+            "Known coagulation disorder."
         );
-    // ASA III or IV + Major surgery
-    if (
-        data.asa >= 3 &&
-        data.normalizedGrade === "major"
-    ) {
 
-        addAdvise(
-            "PT / INR / aPTT",
-            "ASA III or IV undergoing major surgery: advise coagulation assessment according to clinical condition, bleeding history and medication profile."
-        );
+
+        // Intermediate and major surgery
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addAdvise(
+                "Fibrinogen",
+                "Consider fibrinogen measurement according to the type and severity of the coagulation disorder and the expected blood loss."
+            );
+
+            addAdvise(
+                "Hematology consultation",
+                "Consider hematology consultation for perioperative hemostatic planning."
+            );
+        }
+
+
+        // Major surgery
+        if (data.normalizedGrade === "major") {
+
+            addAction(
+                "Perioperative hemostatic planning",
+                "Establish a specific perioperative hemostatic plan based on the type of coagulation disorder, bleeding history, current treatment, and planned surgery."
+            );
+        }
 
     }
-
 }
-
 // ============================================================
 // RULE R009
 // ALBUMIN
