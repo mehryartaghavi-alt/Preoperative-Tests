@@ -678,21 +678,84 @@ function R013_thoracic() {
 
     if (data.surgicalType === "thoracic") {
 
+        // Major thoracic surgery
+        if (data.normalizedGrade === "major") {
+
+            addRequired(
+                "CBC",
+                "Major thoracic surgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Major thoracic surgery."
+            );
+        }
+
+
+        // Cardiovascular assessment
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addAdvise(
+                "ECG",
+                "Consider ECG before intermediate or major thoracic surgery according to ASA status and cardiovascular risk."
+            );
+        }
+
+
+        // Pulmonary function assessment
         addRequired(
-            "Spirometry",
-            "Thoracic surgery."
+            "Spirometry (FEV1)",
+            "Pulmonary function assessment before lung resection."
         );
 
         addRequired(
             "DLCO",
-            "Thoracic surgery."
+            "DLCO assessment before lung resection."
         );
 
+
+        // Postoperative pulmonary reserve
+        addAction(
+            "Predicted postoperative pulmonary function",
+            "Calculate predicted postoperative FEV1 and DLCO according to the planned extent of lung resection."
+        );
+
+
+        // Poor or unknown functional capacity
+        if (
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
+
+            addAdvise(
+                "Exercise capacity assessment",
+                "Consider formal exercise capacity assessment when functional capacity is poor or unknown."
+            );
+
+            addAdvise(
+                "CPET",
+                "Consider cardiopulmonary exercise testing when pulmonary reserve or exercise capacity is inadequate or uncertain."
+            );
+        }
+
+
+        // ABG when clinically indicated
+        if (
+            data.mets === "poor"
+        ) {
+
+            addAdvise(
+                "ABG",
+                "Consider arterial blood gas analysis when severe respiratory impairment, hypoxemia, or hypercapnia is suspected."
+            );
+        }
+
     }
-
 }
-
-
 // ============================================================
 // RULE R014
 // UNCONTROLLED / EXACERBATED RESPIRATORY DISEASE
