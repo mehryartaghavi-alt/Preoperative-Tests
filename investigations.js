@@ -1443,16 +1443,68 @@ function R028_cardiacSurgery() {
 
     if (data.surgicalType === "cardiac") {
 
-        addAction(
-            "Specialized cardiac surgical pathway",
-            "Cardiac surgery requires institution-specific cardiac anesthesia and cardiac surgery assessment."
+        addRequired(
+            "CBC",
+            "Cardiac surgery."
         );
 
+        addRequired(
+            "Renal function + electrolytes",
+            "Cardiac surgery."
+        );
+
+        addRequired(
+            "ECG",
+            "Cardiac surgery."
+        );
+
+        addRequired(
+            "PT / INR + aPTT",
+            "Cardiac surgery and perioperative bleeding assessment."
+        );
+
+        addRequired(
+            "Type and Screen / Crossmatch",
+            "Cardiac surgery with potential for significant blood loss."
+        );
+
+        addRequired(
+            "Echocardiography",
+            "Preoperative assessment of ventricular function and valvular disease before cardiac surgery."
+        );
+
+        addAdvise(
+            "LFT",
+            "Consider liver function assessment according to clinical condition and comorbidities."
+        );
+
+        addAdvise(
+            "Chest X-ray",
+            "Consider chest imaging according to clinical condition and institutional protocol."
+        );
+
+        if (
+            data.respiratory ||
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
+
+            addAdvise(
+                "Spirometry",
+                "Consider pulmonary function testing in patients with respiratory disease or reduced functional capacity."
+            );
+        }
+
+        if (data.respiratory && data.mets === "poor") {
+
+            addAdvise(
+                "ABG",
+                "Consider arterial blood gas analysis when significant respiratory impairment, hypoxemia, or hypercapnia is suspected."
+            );
+        }
+
     }
-
 }
-
-
 // ============================================================
 // RULE R029
 // NEUROSURGERY
