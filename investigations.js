@@ -1462,16 +1462,62 @@ function R029_neurosurgery() {
 
     if (data.surgicalType === "neurosurgery") {
 
-        addAction(
-            "Neurosurgical anesthesia pathway",
-            "Apply procedure-specific neurosurgical preoperative assessment."
-        );
+        // Grade 2 and 3
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addRequired(
+                "CBC",
+                "Intermediate or major neurosurgery."
+            );
+
+            addRequired(
+                "Renal function + electrolytes",
+                "Intermediate or major neurosurgery."
+            );
+
+            addAdvise(
+                "ECG",
+                "Consider ECG according to ASA status and cardiovascular risk."
+            );
+        }
+
+        // Poor or unknown functional capacity
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "Cardiovascular risk assessment",
+                "Consider further cardiovascular assessment in patients with poor or unknown functional capacity."
+            );
+
+            addAdvise(
+                "Stress testing",
+                "Consider stress testing only when cardiovascular risk is elevated and the result is expected to change perioperative management."
+            );
+        }
+
+        // Bleeding risk
+        if (data.bloodLoss === "high") {
+
+            addAdvise(
+                "Type and Screen / Crossmatch",
+                "Consider blood preparation according to the expected blood loss and planned neurosurgical procedure."
+            );
+        }
 
     }
-
 }
-
-
 // ============================================================
 // RULE R030
 // EMERGENCY SURGERY
