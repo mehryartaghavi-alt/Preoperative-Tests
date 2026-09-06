@@ -314,6 +314,17 @@ addAction(
 
 function R003_pregnancy() {
 
+    // Pregnancy assessment in females
+    if (data.sex === "Female") {
+
+        addAdvise(
+            "Pregnancy assessment",
+            "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
+        );
+    }
+
+
+    // Confirmed pregnancy
     if (data.pregnancy) {
 
         // Required
@@ -362,18 +373,10 @@ function R003_pregnancy() {
                 "Fetal assessment",
                 "Assess gestational age and fetal status according to gestational age and clinical condition."
             );
-            if (data.sex === "Female") {
-
-        addAdvise(
-            "Pregnancy assessment",
-            "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
-        );
         }
 
     }
 }
-
-    
 
 
 // ============================================================
