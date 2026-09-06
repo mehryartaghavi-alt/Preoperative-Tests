@@ -1559,14 +1559,7 @@ function R029_neurosurgery() {
             );
         }
 
-        // Bleeding risk
-        if (data.bloodLoss === "high") {
-
-            addAdvise(
-                "Type and Screen / Crossmatch",
-                "Consider blood preparation according to the expected blood loss and planned neurosurgical procedure."
-            );
-        }
+      
 
     }
 }
