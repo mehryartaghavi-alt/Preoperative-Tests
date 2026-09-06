@@ -314,16 +314,66 @@ addAction(
 
 function R003_pregnancy() {
 
-    if (data.sex === "Female") {
+    if (data.pregnancy) {
+
+        // Required
+        addRequired(
+            "CBC",
+            "Pregnancy with obstetric surgery."
+        );
+
+        addRequired(
+            "Type and Crossmatch",
+            "Obstetric surgery with potential risk of significant blood loss."
+        );
+
+
+        // Advice
+        addAdvise(
+            "Coagulation tests",
+            "Consider coagulation assessment according to the clinical condition and bleeding risk."
+        );
+
+        addAdvise(
+            "Liver function tests",
+            "Consider liver function assessment when clinically indicated."
+        );
+
+        addAdvise(
+            "Renal function + electrolytes",
+            "Consider renal function and electrolyte assessment when clinically indicated."
+        );
+
+
+        // Preeclampsia
+        if (data.preeclampsia) {
+
+            addAction(
+                "Preeclampsia assessment",
+                "Assess for preeclampsia-related maternal complications and optimize the patient before surgery."
+            );
+
+            addAdvise(
+                "Obstetric consultation",
+                "Obstetric consultation is advised for patients with preeclampsia."
+            );
+
+            addAction(
+                "Fetal assessment",
+                "Assess gestational age and fetal status according to gestational age and clinical condition."
+            );
+            if (data.sex === "Female") {
 
         addAdvise(
             "Pregnancy assessment",
             "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
         );
+        }
 
     }
-
 }
+
+    
 
 
 // ============================================================
