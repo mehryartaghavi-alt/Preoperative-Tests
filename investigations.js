@@ -314,7 +314,7 @@ addAction(
 
 function R003_pregnancy() {
 
-    // Pregnancy assessment in females
+    // Pregnancy assessment in female patients
     if (data.sex === "Female") {
 
         addAdvise(
@@ -324,13 +324,13 @@ function R003_pregnancy() {
     }
 
 
-    // Confirmed pregnancy
-    if (data.pregnancy) {
+    // Obstetric surgery
+    if (data.surgicalType === "obstetric") {
 
         // Required
         addRequired(
             "CBC",
-            "Pregnancy with obstetric surgery."
+            "Obstetric surgery."
         );
 
         addRequired(
@@ -356,29 +356,18 @@ function R003_pregnancy() {
         );
 
 
-        // Preeclampsia
-        if (data.preeclampsia) {
+        // Obstetric assessment
+        addAction(
+            "Obstetric consultation",
+            "Obstetric consultation is advised before obstetric surgery when clinically indicated."
+        );
 
-            addAction(
-                "Preeclampsia assessment",
-                "Assess for preeclampsia-related maternal complications and optimize the patient before surgery."
-            );
-
-            addAdvise(
-                "Obstetric consultation",
-                "Obstetric consultation is advised for patients with preeclampsia."
-            );
-
-            addAction(
-                "Fetal assessment",
-                "Assess gestational age and fetal status according to gestational age and clinical condition."
-            );
-        }
-
+        addAction(
+            "Fetal assessment",
+            "Assess gestational age and fetal status according to gestational age and clinical condition."
+        );
     }
 }
-
-
 // ============================================================
 // RULE R004
 // BASELINE CBC
