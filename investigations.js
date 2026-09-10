@@ -314,15 +314,18 @@ addAction(
 
 function R003_pregnancy() {
 
-    // Pregnancy assessment in female patients
-    if (data.sex === "Female") {
+    // Pregnancy assessment in female // Pregnancy assessment in women of reproductive age
+if (
+    data.sex === "Female" &&
+    data.age >= 15 &&
+    data.age <= 45
+) {
 
-        addAdvise(
-            "Pregnancy assessment",
-            "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
-        );
-    }
-
+    addAdvise(
+        "Pregnancy assessment",
+        "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
+    );
+}
 
     // Obstetric surgery
     if (data.surgicalType === "obstetric") {
