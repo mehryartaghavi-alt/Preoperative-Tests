@@ -1313,6 +1313,10 @@ function R025_CKD() {
                 "Renal function + eGGR + electrolytes",
                 "Chronic kidney disease with intermediate or major surgery, or poor/unknown functional capacity."
             );
+            addRequired(
+                "eGFR",
+                "Chronic kidney disease with intermediate or major surgery, or poor/unknown functional capacity."
+            );
 
         }
 
