@@ -895,15 +895,108 @@ function R014_respiratoryAction() {
 
 function R015_obesityOSA() {
 
-    if (data.bmi >= 40) {
+    // BMI > 50: Grade 2 or 3
+    if (
+        data.bmi > 50 &&
+        (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        )
+    ) {
 
-        addAdvise(
-            "OSA assessment",
-            "BMI ≥40 kg/m²: screen for obstructive sleep apnea, for example with STOP-BANG."
+        addRequired(
+            "CBC",
+            "BMI >50 kg/m² with intermediate or major surgery."
         );
 
+        addRequired(
+            "FBS",
+            "BMI >50 kg/m² with intermediate or major surgery."
+        );
+
+        addRequired(
+            "Renal function + electrolytes",
+            "BMI >50 kg/m² with intermediate or major surgery."
+        );
+
+        addRequired(
+            "ECG",
+            "BMI >50 kg/m² with intermediate or major surgery."
+        );
     }
 
+
+    // BMI 40–50: Grade 2
+    if (
+        data.bmi >= 40 &&
+        data.bmi <= 50 &&
+        data.normalizedGrade === "intermediate"
+    ) {
+
+        addAdvise(
+            "CBC",
+            "Consider CBC in patients with BMI 40–50 kg/m² undergoing intermediate surgery."
+        );
+    }
+
+
+    // BMI 40–50: Grade 3
+    if (
+        data.bmi >= 40 &&
+        data.bmi <= 50 &&
+        data.normalizedGrade === "major"
+    ) {
+
+        addRequired(
+            "CBC",
+            "BMI 40–50 kg/m² with major surgery."
+        );
+    }
+
+
+    // Poor or unknown functional capacity
+    if (
+        data.bmi >= 40 &&
+        data.bmi <= 50 &&
+        (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) &&
+        (
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        )
+    ) {
+
+        addRequired(
+            "ECG",
+            "BMI 40–50 kg/m² with intermediate or major surgery and poor or unknown functional capacity."
+        );
+    }
+
+
+    // Respiratory disease
+    if (
+        data.bmi >= 40 &&
+        data.bmi <= 50 &&
+        data.respiratory
+    ) {
+
+        addAdvise(
+            "Spirometry",
+            "Consider spirometry in patients with BMI 40–50 kg/m² and respiratory disease."
+        );
+    }
+
+
+    // OSA assessment
+    if (data.bmi >= 40) {
+
+        addAction(
+            "OSA assessment",
+            "Assess for obstructive sleep apnea using clinical assessment and a validated screening tool such as STOP-Bang."
+        );
+    }
 }
 
 
