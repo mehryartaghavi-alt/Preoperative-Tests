@@ -1002,20 +1002,79 @@ function R015_obesityOSA() {
 
 // ============================================================
 // RULE R016
-// BMI >40 / ADDITIONAL METABOLIC ASSESSMENT
+// BARIATRIC SURGERY
 // ============================================================
 
-function R016_obesityLabs() {
+function R016_bariatric() {
 
-    if (data.bmi > 40) {
+    if (data.surgicalType === "bariatric") {
 
-        addAdvise(
-            "Liver function tests",
-            "Severe obesity may be associated with metabolic dysfunction-associated steatotic liver disease and other liver abnormalities."
+        // Required tests
+        addRequired(
+            "ECG",
+            "Preoperative assessment for bariatric surgery."
         );
 
-    }
+        addRequired(
+            "Renal function + electrolytes",
+            "Preoperative assessment for bariatric surgery."
+        );
 
+        addRequired(
+            "LFT",
+            "Preoperative assessment for bariatric surgery."
+        );
+
+        addRequired(
+            "CBC",
+            "Preoperative assessment for bariatric surgery."
+        );
+
+        addRequired(
+            "FBS",
+            "Metabolic assessment before bariatric surgery."
+        );
+
+        addRequired(
+            "HbA1c",
+            "Metabolic assessment before bariatric surgery."
+        );
+
+        addRequired(
+            "Lipid profile",
+            "Metabolic assessment before bariatric surgery."
+        );
+
+        addRequired(
+            "Vitamin B12",
+            "Nutritional assessment before bariatric surgery."
+        );
+
+        addRequired(
+            "Vitamin D",
+            "Nutritional assessment before bariatric surgery."
+        );
+
+
+        // BMI > 50
+        if (data.bmi > 50) {
+
+            addAdvise(
+                "Spirometry",
+                "Consider spirometry in patients with BMI >50 kg/m² undergoing bariatric surgery."
+            );
+
+            addAdvise(
+                "Echocardiography",
+                "Consider echocardiography in patients with BMI >50 kg/m² before bariatric surgery."
+            );
+
+            addAdvise(
+                "ABG",
+                "Consider arterial blood gas analysis in patients with BMI >50 kg/m² when hypoventilation or significant respiratory impairment is suspected."
+            );
+        }
+    }
 }
 
 // ============================================================
@@ -1829,7 +1888,7 @@ const rules = [
     R013_thoracic,
     R014_respiratoryAction,
     R015_obesityOSA,
-    R016_obesityLabs,
+    R016_bariatric,
     R017_CAD,
     R018_HF,
     R019_arrhythmia,
