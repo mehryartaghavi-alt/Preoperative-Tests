@@ -390,7 +390,8 @@ function R004_CBC() {
     if (data.normalizedGrade === "intermediate") {
 
         addAdvise(
-            "CBC" 
+            "CBC",
+            "Intermediate Surgery."
             );
 
     }
