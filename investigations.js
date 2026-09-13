@@ -1994,8 +1994,18 @@ function displayResults() {
 
 
     // Surgical Type
-    document.getElementById("resultSurgicalType").textContent =
-        data.surgicalType || "—";
+    const surgicalTypeLabels = {
+    cardiac: "Cardiac Surgery",
+    urologic: "Urologic Surgery",
+    thoracic: "Thoracic Surgery",
+    vascular: "Vascular Surgery",
+    neurosurgery: "Neurosurgery",
+    bariatric: "Bariatric Surgery",
+    obstetric: "Obstetric Surgery"
+};
+
+document.getElementById("resultSurgicalType").textContent =
+    surgicalTypeLabels[data.surgicalType] || data.surgicalType || "—";
 
 
     // Comorbidities
