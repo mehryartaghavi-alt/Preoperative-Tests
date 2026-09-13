@@ -1966,7 +1966,65 @@ function displayResults() {
 
     container.innerHTML = "";
 
+    // ----------------------------------------
+    // PATIENT SUMMARY
+    // ----------------------------------------
 
+    document.getElementById("resultAge").textContent =
+        data.age || "—";
+
+    document.getElementById("resultSex").textContent =
+        data.sex || "—";
+
+    document.getElementById("resultBMI").textContent =
+        data.bmi || "—";
+
+    document.getElementById("resultASA").textContent =
+        data.asa || "—";
+
+    document.getElementById("resultMETs").textContent =
+        data.mets || "—";
+
+    document.getElementById("resultGrade").textContent =
+        data.grade || "—";
+
+
+    // Surgical Type
+    document.getElementById("resultSurgicalType").textContent =
+        data.surgicalType || "—";
+
+
+    // Comorbidities
+    const comorbidityLabels = {
+
+        hypertension: "Hypertension",
+        diabetes: "Diabetes",
+        cad: "Coronary artery disease",
+        heartFailure: "Heart failure",
+        arrhythmia: "Arrhythmia",
+        valvular: "Valvular heart disease",
+        ckd: "Chronic kidney disease",
+        liver: "Liver disease",
+        respiratory: "Respiratory disease",
+        smoking: "Smoking",
+        cva: "Cerebrovascular disease",
+        thyroid: "Thyroid disease",
+        bleeding: "Bleeding disorder",
+        anemia: "Anemia"
+
+    };
+
+
+    const activeComorbidities =
+        Object.keys(comorbidityLabels)
+            .filter(key => data[key])
+            .map(key => comorbidityLabels[key]);
+
+
+    document.getElementById("resultComorbidities").textContent =
+        activeComorbidities.length > 0
+            ? activeComorbidities.join(", ")
+            : "None";
     // ----------------------------------------
     // REQUIRED
     // ----------------------------------------
