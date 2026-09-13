@@ -294,8 +294,12 @@ function R002_diabetes() {
     if (data.diabetes) {
 
         addRequired(
-            "HbA1c, FBS",
-            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months. FBS, at the morning of surgery."
+            "FBS",
+            "Diabetes mellitus, FBS, at the morning of surgery."
+                       );
+        addRequired(
+            "HbA1c",
+            "Diabetes mellitus: obtain HbA1c if no result is available from the previous 3 months."
                        );
 addAction(
             "Preferred HbA1c for elective surgery is <8%",
