@@ -2001,7 +2001,7 @@ function displayResults() {
     // Comorbidities
     const comorbidityLabels = {
 
-        hypertension: "Hypertension",
+        hypertension: "HTN",
         diabetes: "Diabetes",
         cad: "Coronary artery disease",
         heartFailure: "Heart failure",
