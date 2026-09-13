@@ -2002,16 +2002,16 @@ function displayResults() {
     const comorbidityLabels = {
 
         hypertension: "HTN",
-        diabetes: "Diabetes",
-        cad: "Coronary artery disease",
-        heartFailure: "Heart failure",
+        diabetes: "DM",
+        cad: "CAD",
+        heartFailure: "CHF",
         arrhythmia: "Arrhythmia",
-        valvular: "Valvular heart disease",
-        ckd: "Chronic kidney disease",
+        valvular: "VHD",
+        ckd: "CKD",
         liver: "Liver disease",
         respiratory: "Respiratory disease",
         smoking: "Smoking",
-        cva: "Cerebrovascular disease",
+        cva: "CVA",
         thyroid: "Thyroid disease",
         bleeding: "Bleeding disorder",
         anemia: "Anemia"
