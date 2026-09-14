@@ -248,9 +248,9 @@ function R001_age() {
         // No automatic laboratory testing.
 
         addAction(
-            "Age-related clinical risk assessment",
-            "Age alone is not considered an indication for routine laboratory testing, But CBC, FBS, BUN, Cr sometimes consider."
-                  );
+    "Age-related clinical risk assessment",
+    "Age alone is not an indication for routine preoperative laboratory testing. CBC, glucose assessment, and renal function should be considered according to comorbidities, medications, functional status, surgical grade, and expected blood loss."
+);
 
     }
 
