@@ -276,9 +276,18 @@ function R001_2_hypertension() {
 
     if (data.hypertension) {
 
+        if (
+    data.normalizedGrade === "intermediate" ||
+    data.normalizedGrade === "major"
+) {
+    addRequired(
+        "ECG",
+        "Intermediate or major surgery."
+    );
+}
         addAction(
             "Hypertension-related clinical assessment",
-            "Hypertension alone does not indicate routine preoperative testing. Elective surgery should be postponed if blood pressure is ≥180/110 mmHg."
+             "Assess blood pressure control before surgery. In elective surgery, if blood pressure is ≥180/110 mmHg, reassessment and optimization should be considered, and postponing surgery may be considered when clinically appropriate."
         );
 
     }
