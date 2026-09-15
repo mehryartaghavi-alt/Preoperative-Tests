@@ -1136,35 +1136,68 @@ function R018_HF() {
 
     if (data.heartFailure) {
 
+        // Heart failure stability assessment
         addAction(
             "Assess heart failure stability",
-            "Proceed only after assessment of current symptoms, volume status and clinical stability."
+            "Proceed only after assessment of current symptoms, volume status, functional status, and clinical stability."
         );
- if (
-            data.normalizedGrade === "intermediate" ||
-            data.normalizedGrade === "major"
-        ) {
 
+        // Grade 3 + poor or unknown functional capacity → REQUIRED
+        if (
+            data.normalizedGrade === "major" &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+            addRequired(
+                "Echocardiography",
+                "Heart failure with poor or unknown functional capacity undergoing major surgery."
+            );
+        }
+
+        // Grade 2 or 3 + ASA ≥3 → ADVISE
+        if (
+            data.asa >= 3 &&
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            )
+        ) {
+            addAdvise(
+                "Echocardiography",
+                "Heart failure with ASA ≥3 undergoing intermediate or major surgery."
+            );
+        }
+
+        // Echo if new/worsening symptoms or >1 year since previous echo
+        addAdvise(
+            "Echocardiography",
+            "Consider echocardiography if there are new or worsening cardiac symptoms or if more than one year has elapsed since the previous echocardiogram."
+        );
+
+        // Intermediate or major surgery + poor/unknown functional capacity
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
             addAdvise(
                 "BNP / NT-proBNP",
-                "Preoperative cardiac biomarker assessment and abnormal threshold: BNP >92 pg/mL or NT-proBNP ≥300 pg/mL."
+                "Consider natriuretic peptide assessment in patients with heart failure undergoing intermediate or major surgery with poor or unknown functional capacity."
             );
-
-        }
-        if (
-            data.mets === "poor" ||
-            data.mets === "unknown"
-        ) {
 
             addAdvise(
-                "Cardiac consultation",
-                "Heart failure with poor or unknown functional capacity."
+                "Cardiology consultation",
+                "Consider cardiology consultation in patients with heart failure and poor or unknown functional capacity undergoing intermediate or major surgery."
             );
-
         }
-
     }
-
 }
 
 
