@@ -528,7 +528,6 @@ function R006_heartFailure() {
 function R007_ECG() {
 
     const cardiovascularDisease =
-        data.cad ||
         data.heartFailure ||
         data.arrhythmia ||
         data.valvular;
