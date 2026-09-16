@@ -593,12 +593,7 @@ if (
         return;
     }
 
-    if (cardiovascularDisease) {
-
-        addAdvise(
-            "ECG",
-            "Advise ECG according to cardiovascular history, symptoms and availability of a recent ECG."
-        );
+    
     }
 }
 
