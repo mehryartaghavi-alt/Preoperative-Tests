@@ -1470,7 +1470,7 @@ function R022_stressTest() {
     ) {
 
         addAdvise(
-            "Stress testing",
+            "Stress test",
             "Consider only after formal perioperative cardiovascular risk assessment in a patient with poor/unknown functional capacity and elevated perioperative risk."
         );
 
