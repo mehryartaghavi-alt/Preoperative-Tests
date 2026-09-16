@@ -1101,11 +1101,30 @@ function R017_CAD() {
 
     if (data.cad) {
 
+        // Mild surgery → ECG Advice
+        if (data.normalizedGrade === "minor") {
+
+            addAdvise(
+                "ECG",
+                "Consider preoperative ECG in patients with coronary artery disease undergoing mild surgery."
+            );
+        }
+
+        // Grade 2 or 3 → ECG Required
         if (
-            (
-                data.normalizedGrade === "intermediate" ||
-                data.normalizedGrade === "major"
-            ) &&
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major"
+        ) {
+
+            addRequired(
+                "ECG",
+                "Known coronary artery disease with intermediate or major surgery."
+            );
+        }
+
+        // Grade 3 + poor/unknown functional capacity → Stress test Advice
+        if (
+            data.normalizedGrade === "major" &&
             (
                 data.mets === "poor" ||
                 data.mets === "unknown"
@@ -1113,20 +1132,22 @@ function R017_CAD() {
         ) {
 
             addAdvise(
-                "Stress testing",
-                "Consider stress testing if the result is expected to change management."
+                "Stress test",
+                "Consider stress testing in patients with coronary artery disease undergoing major surgery with poor or unknown functional capacity when perioperative cardiovascular risk is elevated."
             );
-
             addAdvise(
                 "Cardiology consultation",
                 "Consider cardiology consultation in patients with stable coronary artery disease undergoing intermediate or major surgery with poor or unknown functional capacity."
             );
-
         }
 
+        addAction(
+            "CAD perioperative assessment",
+            "Assess clinical stability, current cardiac symptoms, functional capacity, and overall perioperative cardiovascular risk."
+        );
     }
-
 }
+        
 // ============================================================
 // RULE R018
 // HEART FAILURE
