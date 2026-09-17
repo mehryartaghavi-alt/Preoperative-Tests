@@ -1221,22 +1221,51 @@ function R018_HF() {
 
 function R019_arrhythmia() {
 
-    if (data.arrhythmia) {
+    if (!data.arrhythmia) return;
 
-       addAdvise(
-        "Cardiology consultation",
-        "Consider for new, symptomatic arrhythmia before elective surgery."
-    );
-        addAction(
-            "Assess rhythm stability and rate control",
-            "Perioperative arrhythmia management should be based on current rhythm, symptoms and hemodynamic stability."
+    // =========================
+    // ECG
+    // =========================
+
+    // Mild surgery → ECG Advice
+    if (data.normalizedGrade === "minor") {
+
+        addAdvise(
+            "ECG",
+            "Consider ECG in patients with arrhythmia undergoing mild surgery."
         );
-
     }
 
+    // Grade 2 or 3 → ECG Required
+    if (
+        data.normalizedGrade === "intermediate" ||
+        data.normalizedGrade === "major"
+    ) {
+
+        addRequired(
+            "ECG",
+            "Known arrhythmia with intermediate or major surgery."
+        );
+    }
+
+    // =========================
+    // CARDIOLOGY
+    // =========================
+
+    addAdvise(
+        "Cardiology consultation",
+        "Consider cardiology consultation if the arrhythmia is newly diagnosed or is accompanied by respiratory symptoms."
+    );
+
+    // =========================
+    // CLINICAL ASSESSMENT
+    // =========================
+
+    addAction(
+        "Arrhythmia assessment",
+        "Assess arrhythmia type, symptoms, rate or rhythm control, current medications, and clinical stability before surgery."
+    );
 }
-
-
 // ============================================================
 // RULE R020
 // VALVULAR DISEASE
