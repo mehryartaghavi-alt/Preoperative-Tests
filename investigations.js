@@ -1246,17 +1246,18 @@ function R019_arrhythmia() {
             "ECG",
             "Known arrhythmia with intermediate or major surgery."
         );
+        addAdvise(
+        "Cardiology consultation",
+        "Consider cardiology consultation if the arrhythmia is newly diagnosed or is accompanied by respiratory symptoms."
+    );
+
     }
 
     // =========================
     // CARDIOLOGY
     // =========================
 
-    addAdvise(
-        "Cardiology consultation",
-        "Consider cardiology consultation if the arrhythmia is newly diagnosed or is accompanied by respiratory symptoms."
-    );
-
+    
     // =========================
     // CLINICAL ASSESSMENT
     // =========================
