@@ -249,7 +249,7 @@ function R001_age() {
 
         addAction(
     "Age-related clinical risk assessment",
-    "Age alone is not an indication for routine preoperative laboratory testing. CBC, glucose assessment, and renal function should be considered according to comorbidities, medications, functional status, surgical grade, and expected blood loss."
+    "Age per se is not an indication for routine testing if the medical history is accurate and the physical examination is normal."
 );
 
     }
