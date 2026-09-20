@@ -336,7 +336,7 @@ if (
 
     addAdvise(
         "Pregnancy assessment",
-        "Ask about possibility of pregnancy; pregnancy testing should be performed when pregnancy is suspected or uncertain."
+        "Routine pregnancy testing is not indicated unless pregnancy is suspected or cannot be reliably excluded."
     );
 }
 
