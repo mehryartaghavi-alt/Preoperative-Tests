@@ -46,3 +46,23 @@ medicationIds.forEach(function (id) {
 });
 
 loadMedications();
+
+document.getElementById("nextBtn")
+    .addEventListener("click", function () {
+
+        const medications = {};
+
+        medicationIds.forEach(id => {
+
+            medications[id] =
+                document.getElementById(id).checked;
+
+        });
+
+        localStorage.setItem(
+            "medicationsData",
+            JSON.stringify(medications)
+        );
+
+        window.location.href = "surgical.html";
+    });
