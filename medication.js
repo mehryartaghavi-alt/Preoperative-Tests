@@ -8,36 +8,49 @@ const medicationIds = [
     "warfarin", "apixaban", "rivaroxaban", "edoxaban", "dabigatran", "heparin",
     "aspirin", "clopidogrel", "prasugrel", "ticagrelor",
     "acei", "arb", "betaBlocker", "ccb", "diuretic",
-    "steroid", "thyroidMedication", "antiepileptic", "parkinsonMedication", "herbal"
+    "steroid", "thyroidMedication", "antiepileptic",
+    "parkinsonMedication", "herbal"
 ];
 
 function loadMedications() {
-    const saved = JSON.parse(localStorage.getItem("medicationsData") || "{}");
+
+    const saved = JSON.parse(
+        localStorage.getItem("medicationsData") || "{}"
+    );
 
     medicationIds.forEach(function (id) {
+
         const checkbox = document.getElementById(id);
-        if (checkbox) checkbox.checked = saved[id] === true;
+
+        if (checkbox) {
+            checkbox.checked = saved[id] === true;
+        }
     });
 }
 
 function saveMedications() {
+
     const data = {};
 
     medicationIds.forEach(function (id) {
+
         const checkbox = document.getElementById(id);
+
         data[id] = checkbox ? checkbox.checked : false;
     });
 
-    localStorage.setItem("medicationsData", JSON.stringify(data));
+    localStorage.setItem(
+        "medicationsData",
+        JSON.stringify(data)
+    );
 }
 
-function goNext() {
-    saveMedications();
-    window.location.href = "surgical.html";
-}
 
+// ذخیره خودکار هنگام تغییر هر دارو
 medicationIds.forEach(function (id) {
+
     const checkbox = document.getElementById(id);
+
     if (!checkbox) return;
 
     checkbox.addEventListener("change", function () {
@@ -45,24 +58,20 @@ medicationIds.forEach(function (id) {
     });
 });
 
-loadMedications();
 
-document.getElementById("nextBtn")
-    .addEventListener("click", function () {
+// دکمه Continue
+const nextBtn = document.getElementById("nextBtn");
 
-        const medications = {};
+if (nextBtn) {
 
-        medicationIds.forEach(id => {
+    nextBtn.addEventListener("click", function () {
 
-            medications[id] =
-                document.getElementById(id).checked;
-
-        });
-
-        localStorage.setItem(
-            "medicationsData",
-            JSON.stringify(medications)
-        );
+        saveMedications();
 
         window.location.href = "surgical.html";
     });
+}
+
+
+// بارگذاری داروهای قبلی
+loadMedications();
