@@ -77,6 +77,16 @@ const data = {
     bleeding: !!comorbidities.bleeding,
     anemia: !!comorbidities.anemia,
 
+    aspirin: !!medications.aspirin,
+clopidogrel: !!medications.clopidogrel,
+warfarin: !!medications.warfarin,
+doac: !!medications.doac,
+insulin: !!medications.insulin,
+metformin: !!medications.metformin,
+sglt2: !!medications.sglt2,
+glp1: !!medications.glp1,
+steroid: !!medications.steroid,
+
     surgicalType: surgery.surgicalType || "",
 
     grade: surgery.grade || "",
