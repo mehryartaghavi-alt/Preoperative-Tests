@@ -84,5 +84,5 @@ function goNext() {
     saveComorbidities();
 
     window.location.href =
-        "surgical.html";
+        "medication.html";
 }
