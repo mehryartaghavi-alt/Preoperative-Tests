@@ -42,6 +42,7 @@ function getStoredObject(key) {
 
 const patient = getStoredObject("patientData");
 const comorbidities = getStoredObject("comorbiditiesData");
+const medications = getStoredObject("medicationsData");
 const surgery = getStoredObject("surgeryData");
 
 
