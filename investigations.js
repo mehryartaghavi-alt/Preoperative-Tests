@@ -141,8 +141,8 @@ const results = {
 
     required: [],
     advise: [],
-    actions: []٫
-drugActions: []
+    actions: [],
+    drugActions: []
 };
 
 
