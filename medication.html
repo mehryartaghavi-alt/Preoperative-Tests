@@ -2,496 +2,228 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    >
-
-    <meta name="theme-color" content="#0f766e">
-
-    <title>Medications</title>
+    <title>Medication Information</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="app-container">
+<div class="container">
 
-    <!-- Header -->
-    <header class="page-header">
-        <div class="header-icon">💊</div>
+    <h1>Medication Information</h1>
 
-        <div>
-            <h1>Medications</h1>
-            <p>Perioperative medication assessment</p>
-        </div>
-    </header>
+    <!-- ============================= -->
+    <!-- Antidiabetic Medications -->
+    <!-- ============================= -->
 
+    <h2>Antidiabetic Medications</h2>
 
-    <!-- Introduction -->
-    <section class="card medication-intro">
+    <div class="checkbox-grid">
 
-        <h2>Current Medications</h2>
+        <label class="checkbox-card">
+            <input type="checkbox" id="metformin">
+            <span>Metformin</span>
+        </label>
 
-        <p>
-            Select the medications currently used by the patient.
-            Medication-specific perioperative recommendations will
-            be generated later based on the patient's clinical
-            condition and surgical risk.
-        </p>
+        <label class="checkbox-card">
+            <input type="checkbox" id="sglt2">
+            <span>SGLT2 Inhibitors</span>
+        </label>
 
-    </section>
+        <label class="checkbox-card">
+            <input type="checkbox" id="sulfonylurea">
+            <span>Sulfonylureas</span>
+        </label>
 
+        <label class="checkbox-card">
+            <input type="checkbox" id="dpp4">
+            <span>DPP-4 Inhibitors</span>
+        </label>
 
-    <!-- Antidiabetic medications -->
-    <section class="card medication-section">
+        <label class="checkbox-card">
+            <input type="checkbox" id="glp1">
+            <span>GLP-1 Receptor Agonists</span>
+        </label>
 
-        <div class="section-title">
-            <span class="section-icon">🩸</span>
+        <label class="checkbox-card">
+            <input type="checkbox" id="insulin">
+            <span>Insulin</span>
+        </label>
 
-            <div>
-                <h2>Antidiabetic Medications</h2>
-                <p>Diabetes medications</p>
-            </div>
-        </div>
-
-        <div class="medication-list">
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="metformin"
-                    name="medication"
-                    value="metformin"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Metformin</span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="sglt2"
-                    name="medication"
-                    value="sglt2"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    SGLT2 Inhibitor
-                </span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="sulfonylurea"
-                    name="medication"
-                    value="sulfonylurea"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Sulfonylurea
-                </span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="dpp4"
-                    name="medication"
-                    value="dpp4"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    DPP-4 Inhibitor
-                </span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="glp1"
-                    name="medication"
-                    value="glp1"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    GLP-1 Receptor Agonist
-                </span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="insulin"
-                    name="medication"
-                    value="insulin"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Insulin</span>
-            </label>
-
-        </div>
-
-    </section>
+    </div>
 
 
+    <!-- ============================= -->
     <!-- Anticoagulants -->
-    <section class="card medication-section">
+    <!-- ============================= -->
 
-        <div class="section-title">
-            <span class="section-icon">🩸</span>
+    <h2>Anticoagulants</h2>
 
-            <div>
-                <h2>Anticoagulants</h2>
-                <p>Antithrombotic medications</p>
-            </div>
-        </div>
+    <div class="checkbox-grid">
 
-        <div class="medication-list">
+        <label class="checkbox-card">
+            <input type="checkbox" id="warfarin">
+            <span>Warfarin</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="warfarin"
-                    name="medication"
-                    value="warfarin"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Warfarin</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="apixaban">
+            <span>Apixaban</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="apixaban"
-                    name="medication"
-                    value="apixaban"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Apixaban</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="rivaroxaban">
+            <span>Rivaroxaban</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="rivaroxaban"
-                    name="medication"
-                    value="rivaroxaban"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Rivaroxaban</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="edoxaban">
+            <span>Edoxaban</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="edoxaban"
-                    name="medication"
-                    value="edoxaban"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Edoxaban</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="dabigatran">
+            <span>Dabigatran</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="dabigatran"
-                    name="medication"
-                    value="dabigatran"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Dabigatran</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="heparin">
+            <span>Heparin</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="heparin"
-                    name="medication"
-                    value="heparin"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Heparin / LMWH
-                </span>
-            </label>
-
-        </div>
-
-    </section>
+    </div>
 
 
-    <!-- Antiplatelets -->
-    <section class="card medication-section">
+    <!-- ============================= -->
+    <!-- Antiplatelet Agents -->
+    <!-- ============================= -->
 
-        <div class="section-title">
-            <span class="section-icon">❤️</span>
+    <h2>Antiplatelet Agents</h2>
 
-            <div>
-                <h2>Antiplatelet Agents</h2>
-                <p>Platelet inhibitors</p>
-            </div>
-        </div>
+    <div class="checkbox-grid">
 
-        <div class="medication-list">
+        <label class="checkbox-card">
+            <input type="checkbox" id="aspirin">
+            <span>Aspirin</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="aspirin"
-                    name="medication"
-                    value="aspirin"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Aspirin</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="clopidogrel">
+            <span>Clopidogrel</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="clopidogrel"
-                    name="medication"
-                    value="clopidogrel"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Clopidogrel</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="prasugrel">
+            <span>Prasugrel</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="prasugrel"
-                    name="medication"
-                    value="prasugrel"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Prasugrel</span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="ticagrelor">
+            <span>Ticagrelor</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="ticagrelor"
-                    name="medication"
-                    value="ticagrelor"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">Ticagrelor</span>
-            </label>
-
-        </div>
-
-    </section>
+    </div>
 
 
-    <!-- Cardiovascular medications -->
-    <section class="card medication-section">
+    <!-- ============================= -->
+    <!-- Cardiovascular Medications -->
+    <!-- ============================= -->
 
-        <div class="section-title">
-            <span class="section-icon">❤️</span>
+    <h2>Cardiovascular Medications</h2>
 
-            <div>
-                <h2>Cardiovascular Medications</h2>
-                <p>Cardiac and blood pressure medications</p>
-            </div>
-        </div>
+    <div class="checkbox-grid">
 
-        <div class="medication-list">
+        <label class="checkbox-card">
+            <input type="checkbox" id="acei">
+            <span>ACE Inhibitors</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="acei"
-                    name="medication"
-                    value="acei"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    ACE Inhibitor
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="arb">
+            <span>ARBs</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="arb"
-                    name="medication"
-                    value="arb"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    ARB
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="betaBlocker">
+            <span>Beta-Blockers</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="betaBlocker"
-                    name="medication"
-                    value="betaBlocker"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Beta-blocker
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="ccb">
+            <span>Calcium Channel Blockers</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="ccb"
-                    name="medication"
-                    value="ccb"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Calcium-channel blocker
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="diuretic">
+            <span>Diuretics</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="diuretic"
-                    name="medication"
-                    value="diuretic"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Diuretic
-                </span>
-            </label>
-
-        </div>
-
-    </section>
+    </div>
 
 
-    <!-- Other medications -->
-    <section class="card medication-section">
+    <!-- ============================= -->
+    <!-- Other Medications -->
+    <!-- ============================= -->
 
-        <div class="section-title">
-            <span class="section-icon">💊</span>
+    <h2>Other Medications</h2>
 
-            <div>
-                <h2>Other Important Medications</h2>
-                <p>Additional perioperative medications</p>
-            </div>
-        </div>
+    <div class="checkbox-grid">
 
-        <div class="medication-list">
+        <label class="checkbox-card">
+            <input type="checkbox" id="steroid">
+            <span>Corticosteroids</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="steroids"
-                    name="medication"
-                    value="steroids"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Corticosteroids
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="thyroidMedication">
+            <span>Thyroid Medication</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="thyroid"
-                    name="medication"
-                    value="thyroid"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Thyroid medication
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="antiepileptic">
+            <span>Antiepileptic Drugs</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="antiepileptic"
-                    name="medication"
-                    value="antiepileptic"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Antiepileptic medication
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="parkinsonMedication">
+            <span>Parkinson's Medication</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="parkinson"
-                    name="medication"
-                    value="parkinson"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Parkinson medication
-                </span>
-            </label>
+        <label class="checkbox-card">
+            <input type="checkbox" id="herbal">
+            <span>Herbal / Supplement Use</span>
+        </label>
 
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="hormonal"
-                    name="medication"
-                    value="hormonal"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Hormonal medication
-                </span>
-            </label>
-
-            <label class="medication-item">
-                <input
-                    type="checkbox"
-                    id="herbal"
-                    name="medication"
-                    value="herbal"
-                >
-                <span class="checkmark"></span>
-                <span class="medication-name">
-                    Herbal / supplements
-                </span>
-            </label>
-
-        </div>
-
-    </section>
+    </div>
 
 
+    <!-- ============================= -->
     <!-- Navigation -->
+    <!-- ============================= -->
+
     <div class="navigation-buttons">
 
         <button
             type="button"
             class="btn btn-secondary"
-            onclick="history.back()"
-        >
+            onclick="history.back()">
             ← Back
         </button>
 
         <button
             type="button"
             class="btn btn-primary"
-            id="nextBtn"
-        >
+            id="nextBtn">
             Next →
         </button>
 
     </div>
 
 </div>
-
 
 <script src="medication.js"></script>
 
