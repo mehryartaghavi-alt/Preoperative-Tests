@@ -141,8 +141,8 @@ const results = {
 
     required: [],
     advise: [],
-    actions: []
-
+    actions: []٫
+drugActions: []
 };
 
 
@@ -176,7 +176,12 @@ function addAction(action, reason) {
     });
 
 }
-
+function addDrugAction(drug, action) {
+    results.drugActions.push({
+        drug,
+        action
+    });
+}
 
 // ============================================================
 // DEDUPLICATION
