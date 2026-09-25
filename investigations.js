@@ -100,6 +100,11 @@ glp1: !!medications.glp1,
 steroid: !!medications.steroid,
 sulfonylurea: !!medications.sulfonylurea,
 dpp4: !!medications.dpp4,
+   steroid: !!medications.steroid,
+thyroidMedication: !!medications.thyroidMedication,
+antiepileptic: !!medications.antiepileptic,
+parkinsonMedication: !!medications.parkinsonMedication,
+herbal: !!medications.herbal,
     surgicalType: surgery.surgicalType || "",
 
     grade: surgery.grade || "",
@@ -2162,6 +2167,49 @@ function M004_cardiovascularMedications() {
         );
     }
 }
+
+// ==========================================
+// M005 – Other Medication Management
+// ==========================================
+
+function M005_otherMedications() {
+
+    if (data.steroid) {
+        addDrugAction(
+            "Steroid",
+            "Continue perioperatively. Assess the need for perioperative glucocorticoid supplementation according to the dose, duration, and indication of chronic steroid therapy."
+        );
+    }
+
+    if (data.thyroidMedication) {
+        addDrugAction(
+            "Thyroid medication",
+            "Continue perioperatively when possible."
+        );
+    }
+
+    if (data.antiepileptic) {
+        addDrugAction(
+            "Antiepileptic medication",
+            "Continue perioperatively and avoid interruption whenever possible."
+        );
+    }
+
+    if (data.parkinsonMedication) {
+        addDrugAction(
+            "Parkinson medication",
+            "Continue perioperatively when possible. Avoid unnecessary interruption because withdrawal may worsen Parkinsonian symptoms."
+        );
+    }
+
+    if (data.herbal) {
+        addDrugAction(
+            "Herbal medications",
+            "Consider discontinuing herbal medications before surgery because of potential effects on bleeding, cardiovascular function, sedation, and drug interactions."
+        );
+    }
+}
+
 // ============================================================
 // RUN ALL RULES
 // ============================================================
@@ -2204,7 +2252,8 @@ const rules = [
     M001_diabetesMedications,
     M002_anticoagulants,
     M003_antiplatelets,
-    M004_cardiovascularMedications
+    M004_cardiovascularMedications,
+    M005_otherMedications
 ];
 
 rules.forEach(rule => rule());
