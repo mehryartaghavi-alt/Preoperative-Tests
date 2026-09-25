@@ -2291,7 +2291,7 @@ document.getElementById("resultSurgicalType").textContent =
 // ----------------------------------------
 // DRUG ACTIONS
 // ----------------------------------------
-
+if (results.drugActions.length > 0) {
     const drugActionSection =
         document.createElement("div");
 
