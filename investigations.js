@@ -2287,7 +2287,6 @@ document.getElementById("resultSurgicalType").textContent =
 
     container.appendChild(actionSection);
 
-}
 // ----------------------------------------
 // DRUG ACTIONS
 // ----------------------------------------
