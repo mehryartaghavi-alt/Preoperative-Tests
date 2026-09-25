@@ -80,6 +80,12 @@ const data = {
     aspirin: !!medications.aspirin,
 clopidogrel: !!medications.clopidogrel,
 warfarin: !!medications.warfarin,
+    apixaban: !!medications.apixaban,
+rivaroxaban: !!medications.rivaroxaban,
+edoxaban: !!medications.edoxaban,
+dabigatran: !!medications.dabigatran,
+
+heparin: !!medications.heparin,
 doac: !!medications.doac,
 insulin: !!medications.insulin,
 metformin: !!medications.metformin,
@@ -2020,6 +2026,59 @@ function M001_diabetesMedications() {
         );
     }
 }
+// ==========================================
+// M002 – Anticoagulant Management
+// ==========================================
+
+function M002_anticoagulants() {
+
+    if (data.warfarin) {
+        addDrugAction(
+            "Warfarin",
+            "Usually discontinue approximately 5 days before surgery. Check INR before surgery and ensure adequate hemostasis before restarting."
+        );
+
+        addDrugAction(
+            "Warfarin",
+            "Perioperative heparin bridging should not be used routinely; consider bridging only in selected patients at high thromboembolic risk."
+        );
+    }
+
+    if (data.apixaban) {
+        addDrugAction(
+            "Apixaban",
+            "Withhold before surgery according to procedural bleeding risk and renal function. Routine perioperative heparin bridging is not recommended."
+        );
+    }
+
+    if (data.rivaroxaban) {
+        addDrugAction(
+            "Rivaroxaban",
+            "Withhold before surgery according to procedural bleeding risk and renal function. Routine perioperative heparin bridging is not recommended."
+        );
+    }
+
+    if (data.edoxaban) {
+        addDrugAction(
+            "Edoxaban",
+            "Withhold before surgery according to procedural bleeding risk and renal function. Routine perioperative heparin bridging is not recommended."
+        );
+    }
+
+    if (data.dabigatran) {
+        addDrugAction(
+            "Dabigatran",
+            "Withhold before surgery according to procedural bleeding risk and renal function. A longer interruption may be required with impaired renal function. Routine perioperative heparin bridging is not recommended."
+        );
+    }
+
+    if (data.heparin) {
+        addDrugAction(
+            "Heparin",
+            "Perioperative management depends on the indication, formulation, dosing regimen, timing of the last dose, and bleeding risk of the procedure."
+        );
+    }
+}
 // ============================================================
 // RUN ALL RULES
 // ============================================================
@@ -2059,7 +2118,8 @@ const rules = [
     R030_emergency,
     R031_electiveRisk,
     R032_vascular,
-    M001_diabetesMedications
+    M001_diabetesMedications,
+    M002_anticoagulants
 ];
 
 rules.forEach(rule => rule());
