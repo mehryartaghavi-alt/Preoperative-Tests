@@ -86,7 +86,11 @@ warfarin: !!medications.warfarin,
 rivaroxaban: !!medications.rivaroxaban,
 edoxaban: !!medications.edoxaban,
 dabigatran: !!medications.dabigatran,
-
+acei: !!medications.acei,
+arb: !!medications.arb,
+betaBlocker: !!medications.betaBlocker,
+ccb: !!medications.ccb,
+diuretic: !!medications.diuretic,
 heparin: !!medications.heparin,
 doac: !!medications.doac,
 insulin: !!medications.insulin,
@@ -2077,12 +2081,44 @@ function M002_anticoagulants() {
     if (data.heparin) {
         addDrugAction(
             "Heparin",
-            "Perioperative management depends on the indication, formulation, dosing regimen, timing of the last dose, and bleeding risk of the procedure."
+            "Perioperative management depends on the indication, formulation, dosing regimen, timing of the last dose, and bleeding risk of the function M004_cardiovascularMedications() {
+
+    if (data.acei) {
+        addDrugAction(
+            "ACE inhibitor",
+            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
+        );
+    }
+
+    if (data.arb) {
+        addDrugAction(
+            "ARB",
+            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
+        );
+    }
+
+    if (data.betaBlocker) {
+        addDrugAction(
+            "Beta-blocker",
+            "Continue perioperatively in patients who are already receiving beta-blocker therapy. Avoid abrupt discontinuation."
+        );
+    }
+
+    if (data.ccb) {
+        addDrugAction(
+            "Calcium-channel blocker",
+            "Generally continue perioperatively. Monitor blood pressure and heart rate according to the specific agent and clinical status."
+        );
+    }
+
+    if (data.diuretic) {
+        addDrugAction(
+            "Diuretic",
+            "Consider withholding on the morning of surgery depending on the indication, volume status, electrolyte balance, and risk of perioperative hypotension."
         );
     }
 }
-
-// ==========================================
+ //==========================================
 // M003 – Antiplatelet Management
 // ==========================================
 
@@ -2113,6 +2149,48 @@ function M003_antiplatelets() {
         addDrugAction(
             "Ticagrelor",
             "If interruption is required, discontinue approximately 3–5 days before surgery. The decision should consider bleeding risk and the indication for antiplatelet therapy, particularly recent coronary stenting."
+        );
+    }
+}
+
+    //==========================================
+// M004 – Cardiivascular Medications
+// ==========================================
+
+function M004_cardiovascularMedications() {
+
+    if (data.acei) {
+        addDrugAction(
+            "ACE inhibitor",
+            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
+        );
+    }
+
+    if (data.arb) {
+        addDrugAction(
+            "ARB",
+            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
+        );
+    }
+
+    if (data.betaBlocker) {
+        addDrugAction(
+            "Beta-blocker",
+            "Continue perioperatively in patients who are already receiving beta-blocker therapy. Avoid abrupt discontinuation."
+        );
+    }
+
+    if (data.ccb) {
+        addDrugAction(
+            "Calcium-channel blocker",
+            "Generally continue perioperatively. Monitor blood pressure and heart rate according to the specific agent and clinical status."
+        );
+    }
+
+    if (data.diuretic) {
+        addDrugAction(
+            "Diuretic",
+            "Consider withholding on the morning of surgery depending on the indication, volume status, electrolyte balance, and risk of perioperative hypotension."
         );
     }
 }
@@ -2157,7 +2235,8 @@ const rules = [
     R032_vascular,
     M001_diabetesMedications,
     M002_anticoagulants,
-    M003_antiplatelets
+    M003_antiplatelets,
+    M004_cardiovascularMedications
 ];
 
 rules.forEach(rule => rule());
