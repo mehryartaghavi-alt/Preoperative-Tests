@@ -86,7 +86,8 @@ metformin: !!medications.metformin,
 sglt2: !!medications.sglt2,
 glp1: !!medications.glp1,
 steroid: !!medications.steroid,
-
+sulfonylurea: !!medications.sulfonylurea,
+dpp4: !!medications.dpp4,
     surgicalType: surgery.surgicalType || "",
 
     grade: surgery.grade || "",
@@ -1971,7 +1972,54 @@ function R032_vascular() {
 
     }
 }
+//============================================================
+// MEDICATION RULE M001
+// DIABETES MEDICATIONS
+// ============================================================
+function M001_diabetesMedications() {
 
+    if (data.metformin) {
+        addDrugAction(
+            "Metformin",
+            "Hold on the day of surgery."
+        );
+    }
+
+    if (data.sglt2) {
+        addDrugAction(
+            "SGLT2 inhibitor",
+            "Hold 3 days before elective surgery. Ertugliflozin should be held for 4 days."
+        );
+    }
+
+    if (data.sulfonylurea) {
+        addDrugAction(
+            "Sulfonylurea",
+            "Hold on the day of surgery."
+        );
+    }
+
+    if (data.dpp4) {
+        addDrugAction(
+            "DPP-4 inhibitor",
+            "Hold on the day of surgery."
+        );
+    }
+
+    if (data.glp1) {
+        addDrugAction(
+            "GLP-1 receptor agonist",
+            "Assess the risk of nausea, vomiting, and pulmonary aspiration."
+        );
+    }
+
+    if (data.insulin) {
+        addDrugAction(
+            "Insulin",
+            "Adjust insulin dosing according to blood glucose levels. In patients with type 1 diabetes, basal insulin should not be completely discontinued."
+        );
+    }
+}
 // ============================================================
 // RUN ALL RULES
 // ============================================================
@@ -2010,7 +2058,8 @@ const rules = [
     R029_neurosurgery,
     R030_emergency,
     R031_electiveRisk,
-    R032_vascular
+    R032_vascular,
+    M001_diabetesMedications
 ];
 
 rules.forEach(rule => rule());
