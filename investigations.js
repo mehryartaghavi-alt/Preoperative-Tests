@@ -2288,7 +2288,37 @@ document.getElementById("resultSurgicalType").textContent =
     container.appendChild(actionSection);
 
 }
+// ----------------------------------------
+// DRUG ACTIONS
+// ----------------------------------------
 
+    const drugActionSection =
+        document.createElement("div");
+
+    drugActionSection.className =
+        "result-section drug-action-section";
+
+    drugActionSection.innerHTML =
+        "<h2>DRUG ACTIONS 💊</h2>";
+
+    results.drugActions.forEach(item => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "result-row";
+
+        row.innerHTML = `
+            <strong>${item.drug}</strong>
+            <p>${item.action}</p>
+        `;
+
+        drugActionSection.appendChild(row);
+    });
+
+    container.appendChild(drugActionSection);
+}
 
 // ============================================================
 // START
