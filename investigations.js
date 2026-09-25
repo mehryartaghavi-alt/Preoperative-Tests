@@ -2318,7 +2318,7 @@ if (results.drugActions && results.drugActions.length > 0) {
 
     container.appendChild(drugActionSection);
 }
-
+}
 // ============================================================
 // START
 // ============================================================
