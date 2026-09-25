@@ -2078,46 +2078,14 @@ function M002_anticoagulants() {
         );
     }
 
-    if (data.heparin) {
-        addDrugAction(
-            "Heparin",
-            "Perioperative management depends on the indication, formulation, dosing regimen, timing of the last dose, and bleeding risk of the function M004_cardiovascularMedications() {
-
-    if (data.acei) {
-        addDrugAction(
-            "ACE inhibitor",
-            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
-        );
-    }
-
-    if (data.arb) {
-        addDrugAction(
-            "ARB",
-            "Consider withholding on the day of surgery, particularly when used for hypertension, because of the risk of perioperative hypotension. Management should be individualized according to the indication and hemodynamic status."
-        );
-    }
-
-    if (data.betaBlocker) {
-        addDrugAction(
-            "Beta-blocker",
-            "Continue perioperatively in patients who are already receiving beta-blocker therapy. Avoid abrupt discontinuation."
-        );
-    }
-
-    if (data.ccb) {
-        addDrugAction(
-            "Calcium-channel blocker",
-            "Generally continue perioperatively. Monitor blood pressure and heart rate according to the specific agent and clinical status."
-        );
-    }
-
-    if (data.diuretic) {
-        addDrugAction(
-            "Diuretic",
-            "Consider withholding on the morning of surgery depending on the indication, volume status, electrolyte balance, and risk of perioperative hypotension."
-        );
-    }
+  if (data.heparin) {
+    addDrugAction(
+        "Heparin",
+        "Perioperative management depends on the indication, formulation, dosing regimen, timing of the last dose, and bleeding risk."
+    );
 }
+}
+  
  //==========================================
 // M003 – Antiplatelet Management
 // ==========================================
