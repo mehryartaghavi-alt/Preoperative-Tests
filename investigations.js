@@ -79,6 +79,8 @@ const data = {
 
     aspirin: !!medications.aspirin,
 clopidogrel: !!medications.clopidogrel,
+prasugrel: !!medications.prasugrel,
+ticagrelor: !!medications.ticagrelor,
 warfarin: !!medications.warfarin,
     apixaban: !!medications.apixaban,
 rivaroxaban: !!medications.rivaroxaban,
@@ -2079,6 +2081,41 @@ function M002_anticoagulants() {
         );
     }
 }
+
+// ==========================================
+// M003 – Antiplatelet Management
+// ==========================================
+
+function M003_antiplatelets() {
+
+    if (data.aspirin) {
+        addDrugAction(
+            "Aspirin",
+            "Continue perioperatively when possible, particularly in patients with prior coronary stent, after considering surgical bleeding risk."
+        );
+    }
+
+    if (data.clopidogrel) {
+        addDrugAction(
+            "Clopidogrel",
+            "If interruption is required, discontinue approximately 5 days before surgery. The decision should consider bleeding risk and the indication for antiplatelet therapy, particularly recent coronary stenting."
+        );
+    }
+
+    if (data.prasugrel) {
+        addDrugAction(
+            "Prasugrel",
+            "If interruption is required, discontinue approximately 7 days before surgery. The decision should consider bleeding risk and the indication for antiplatelet therapy, particularly recent coronary stenting."
+        );
+    }
+
+    if (data.ticagrelor) {
+        addDrugAction(
+            "Ticagrelor",
+            "If interruption is required, discontinue approximately 3–5 days before surgery. The decision should consider bleeding risk and the indication for antiplatelet therapy, particularly recent coronary stenting."
+        );
+    }
+}
 // ============================================================
 // RUN ALL RULES
 // ============================================================
@@ -2119,7 +2156,8 @@ const rules = [
     R031_electiveRisk,
     R032_vascular,
     M001_diabetesMedications,
-    M002_anticoagulants
+    M002_anticoagulants,
+    M003_antiplatelets
 ];
 
 rules.forEach(rule => rule());
