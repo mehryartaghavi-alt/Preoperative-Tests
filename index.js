@@ -116,3 +116,33 @@ document
         window.location.href = "patient.html";
 
     });
+// ==========================================
+// Register Service Worker
+// ==========================================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", function () {
+
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function (registration) {
+
+                console.log(
+                    "Service Worker registered:",
+                    registration.scope
+                );
+
+            })
+            .catch(function (error) {
+
+                console.error(
+                    "Service Worker registration failed:",
+                    error
+                );
+
+            });
+
+    });
+
+}
