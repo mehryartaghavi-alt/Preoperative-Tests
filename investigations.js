@@ -282,8 +282,8 @@ function R001_age() {
         // No automatic laboratory testing.
 
         addAction(
-    "Age-related clinical risk assessment",
-    "Age per se is not an indication for routine testing if the medical history is accurate and the physical examination is normal."
+    "Age-related accurate clinical assessment & examination",
+    "Age per se is not an indication for routine testing."
 );
 
     }
