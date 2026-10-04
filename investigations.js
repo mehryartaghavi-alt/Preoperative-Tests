@@ -310,19 +310,25 @@ function R001_2_hypertension() {
 
     if (data.hypertension) {
 
-        if (
-    data.normalizedGrade === "intermediate" ||
-    data.normalizedGrade === "major"
+       ||
+            data.age > 50
 ) {
     addRequired(
         "ECG",
-        "Intermediate or major surgery."
+        "Intermediate or major surgery or more risk for cardiovascular complications."
     );
+            
+}
+       
+         if (
+    data.normalizedGrade === "intermediate" ||
+    data.normalizedGrade === "major" 
+             ) {
              addRequired(
                 "Renal function + electrolytes",
                 "ASA II or higher with intermediate/major surgery."
             );
-}
+         }
         addAction(
             "Hypertension-related clinical assessment & Assess blood pressure control",
              "If blood pressure is ≥180/110 mmHg, reassessment, and postponing surgery may be considered when clinically appropriate."
