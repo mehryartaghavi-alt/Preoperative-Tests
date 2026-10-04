@@ -1586,7 +1586,7 @@ function R025_CKD() {
         ) {
 
             addRequired(
-                "Renal function + eGGR + electrolytes",
+                "Renal function + electrolytes",
                 "Chronic kidney disease with intermediate or major surgery, or poor/unknown functional capacity."
             );
             addRequired(
@@ -1879,7 +1879,7 @@ function R029_neurosurgery() {
             );
 
             addAdvise(
-                "Stress testing",
+                "Stress test",
                 "Consider stress testing only when cardiovascular risk is elevated and the result is expected to change perioperative management."
             );
         }
@@ -1977,7 +1977,7 @@ function R032_vascular() {
         ) {
 
             addAdvise(
-                "Stress testing",
+                "Stress test",
                 "Consider stress testing when functional capacity is poor or unknown and the result is expected to change perioperative management."
             );
 
