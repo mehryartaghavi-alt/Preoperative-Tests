@@ -318,6 +318,10 @@ function R001_2_hypertension() {
         "ECG",
         "Intermediate or major surgery."
     );
+             addRequired(
+                "Renal function + electrolytes",
+                "ASA II or higher with intermediate/major surgery."
+            );
 }
         addAction(
             "Hypertension-related clinical assessment",
