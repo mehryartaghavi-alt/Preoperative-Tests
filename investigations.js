@@ -324,8 +324,8 @@ function R001_2_hypertension() {
             );
 }
         addAction(
-            "Hypertension-related clinical assessment",
-             "Assess blood pressure control before surgery. In elective surgery, if blood pressure is ≥180/110 mmHg, reassessment and optimization should be considered, and postponing surgery may be considered when clinically appropriate."
+            "Hypertension-related clinical assessment & Assess blood pressure control",
+             "If blood pressure is ≥180/110 mmHg, reassessment, and postponing surgery may be considered when clinically appropriate."
         );
 
     }
