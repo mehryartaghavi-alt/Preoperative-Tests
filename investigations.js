@@ -319,7 +319,7 @@ function R001_2_hypertension() {
 ) {
     addRequired(
         "ECG",
-        "Intermediate or major surgery or more risk for cardiovascular complications."
+        "Intermediate or major surgery with more risk for cardiovascular complications."
     );
             
 }
@@ -330,7 +330,7 @@ function R001_2_hypertension() {
              ) {
              addRequired(
                 "Renal function + electrolytes",
-                "ASA II or higher with intermediate/major surgery."
+                "Hypertension with ACEI or diuretic therapy & intermediate/major surgery."
             );
          }
         addAction(
