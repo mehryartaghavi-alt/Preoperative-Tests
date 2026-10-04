@@ -365,7 +365,7 @@ function R003_pregnancy() {
 if (
     data.sex === "Female" &&
     data.age >= 15 &&
-    data.age <= 45
+    data.age <= 50
 ) {
 
     addAdvise(
