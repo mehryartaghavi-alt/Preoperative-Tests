@@ -311,8 +311,10 @@ function R001_2_hypertension() {
     if (data.hypertension) {
 
        if (
+           (
     data.normalizedGrade === "intermediate" ||
-    data.normalizedGrade === "major" ||
+    data.normalizedGrade === "major" 
+           ) &&
             data.age > 50
 ) {
     addRequired(
