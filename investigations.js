@@ -311,8 +311,8 @@ function R001_2_hypertension() {
     if (data.hypertension) {
 
       if (
-    data.normalizedGrade === "minor" &&
-    data.asa >= 3 &&
+    data.normalizedGrade === "mild" &&
+    data.asa >= 3
 ) {
     addAdvise(
         "ECG",
