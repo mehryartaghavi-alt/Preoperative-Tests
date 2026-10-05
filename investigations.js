@@ -310,7 +310,16 @@ function R001_2_hypertension() {
 
     if (data.hypertension) {
 
-       if (
+      if (
+    data.normalizedGrade === "minor" &&
+    data.asa >= 3 &&
+) {
+    addAdvise(
+        "ECG",
+        "If no ECG result is available from the past 12 months."
+    );
+}
+        if (
            (
     data.normalizedGrade === "intermediate" ||
     data.normalizedGrade === "major" 
