@@ -376,7 +376,7 @@ if (
 ) {
     addAdvise(
         "ECG",
-        "If no ECG result is available from the past 12 months."
+        "Intermediate surgery especially with cardiovascular or renal complications."
     );
 }
         if (
