@@ -319,7 +319,7 @@ function R001_2_hypertension() {
 ) {
     addRequired(
         "ECG",
-        "Intermediate or major surgery with more risk for cardiovascular complications."
+        "Intermediate or major surgery with more risk for cardiovascular complications, especially with long-lasting, severe or poor controlled hypertension."
     );
             
 }
