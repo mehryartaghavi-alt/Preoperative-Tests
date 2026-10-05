@@ -371,7 +371,22 @@ addAction(
             "Preferred HbA1c for elective surgery is <8%",
             "Perioperative target for FBS is 100–180 mg/dL (5.6–10 mmol/L)."
         );
-
+if (
+    data.normalizedGrade === "intermediate"
+) {
+    addAdvise(
+        "ECG",
+        "If no ECG result is available from the past 12 months."
+    );
+}
+        if (
+    data.normalizedGrade === "major"
+) {
+    addRequired(
+        "ECG",
+        "Major surgery for assessment of cardiovascluar complications."
+    );
+}
     }
 
 }
