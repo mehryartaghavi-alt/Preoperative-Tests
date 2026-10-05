@@ -324,7 +324,7 @@ function R001_2_hypertension() {
     data.normalizedGrade === "intermediate" ||
     data.normalizedGrade === "major" 
            ) &&
-            data.age > 50
+            data.age > 65
 ) {
     addRequired(
         "ECG",
