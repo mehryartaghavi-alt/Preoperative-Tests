@@ -244,9 +244,25 @@ padding:14px;
 .cardiac-choice label {
 
     font-weight: normal;
+    font-size: 14px;
 
 }
+.cardiac-disease-row {
 
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+    margin: 3px 0 !important;
+    padding: 4px 2px;
+
+    font-weight: 300 !important;
+    font-size: 14px;
+    color: #b71c1c;
+
+    line-height: 1.25;
+}
 #activeCardiacOptions {
 
     margin-top: 8px;
