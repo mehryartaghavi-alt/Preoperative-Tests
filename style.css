@@ -250,6 +250,7 @@ padding:14px;
 .cardiac-disease-row span {
     flex: 0 0 auto;
     text-align: left;
+    font-size: 13px !important;
 }
 .cardiac-disease-row {
 
