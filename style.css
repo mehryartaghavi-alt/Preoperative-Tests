@@ -247,6 +247,10 @@ padding:14px;
     font-size: 14px;
 
 }
+.cardiac-disease-row span {
+    flex: 0 0 auto;
+    text-align: left;
+}
 .cardiac-disease-row {
 
     display: flex !important;
@@ -258,7 +262,7 @@ padding:14px;
     padding: 4px 2px;
 
     font-weight: 600 !important;
-    font-size: 8px;
+    font-size: 6px;
     color: #b71c1c;
 
     line-height: 1.25;
