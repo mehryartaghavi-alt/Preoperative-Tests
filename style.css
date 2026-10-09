@@ -276,33 +276,43 @@ padding:14px;
     margin: 0;
     align-items: right;
     justify-self: end;
-}
-#activeCardiacOptions {
-
-    margin-top: 8px;
+}#activeCardiacOptions {
+    margin-top: 6px;
     padding: 8px 12px;
-
     background: #ffffff;
-
     border-radius: 8px;
-
 }
 
-#activeCardiacOptions label {
+/* همه بیماری‌ها یک ردیف کامل */
+#activeCardiacOptions > label {
+    display: grid !important;
 
-    display: flex;
+    grid-template-columns: 1fr 28px;
 
     align-items: center;
 
-    margin: 5px 0;
+    width: 100%;
 
-    font-weight: 300;
+    margin: 0 !important;
+
+    padding: 7px 4px;
+
+    font-weight: 600 !important;
 
     color: #b71c1c;
 
+    line-height: 1.25;
 }
 
+/* checkboxها دقیقاً در یک ستون سمت راست */
+#activeCardiacOptions > label input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
 
+    margin: 0;
+
+    justify-self: end;
+}
 /* ================================
    Active Cardiac Alert
    ================================ */
