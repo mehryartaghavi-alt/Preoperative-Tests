@@ -1173,7 +1173,24 @@ function R017_CAD() {
                 "Consider preoperative ECG in patients with coronary artery disease undergoing mild surgery."
             );
         }
-
+        // Grade 2 or 3 + poor/unknown functional capacity
+        // + age >= 65 or known CAD → Consider BNP / NT-proBNP
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            ) &&
+            data.age >= 65
+        ) {
+            addAdvise(
+                "BNP / NT-proBNP",
+                "Consider preoperative BNP or NT-proBNP measurement in patients aged 65 years or older undergoing intermediate or major surgery with poor or unknown functional capacity, when perioperative cardiovascular risk is elevated and the result may influence management."
+            );
+        }
         // Grade 2 or 3 → ECG Required
         if (
             data.normalizedGrade === "intermediate" ||
