@@ -1197,7 +1197,7 @@ function R017_CAD() {
 
             addAdvise(
                 "Stress test",
-                "Consider stress testing in patients with coronary artery disease undergoing major surgery with poor or unknown functional capacity when perioperative cardiovascular risk is elevated."
+                "Consider stress testing only if perioperative cardiovascular risk is elevated and the result is likely to change management."
             );
             addAdvise(
                 "Cardiology consultation",
