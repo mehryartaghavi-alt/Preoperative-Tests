@@ -570,25 +570,69 @@ function R005_kidney() {
 // HEART FAILURE + ELECTROLYTES
 // ============================================================
 
-function R006_heartFailure() {
+function R019_HeartFailure() {
 
     if (data.heartFailure) {
 
+        // Grade 2 or 3 → Renal function + electrolytes
         if (
             data.normalizedGrade === "intermediate" ||
             data.normalizedGrade === "major"
         ) {
-
             addRequired(
                 "Renal function + electrolytes",
-                "Heart failure with intermediate or major surgery."
+                "Heart failure undergoing intermediate or major surgery. Assess renal function and electrolytes, particularly in patients receiving diuretics or other medications affecting renal function and electrolytes."
             );
-
-            
         }
 
-    }
+        // Grade 1 + age > 65 + ASA >= 3 → Renal function + electrolytes
+        if (
+            data.normalizedGrade === "minor" &&
+            data.age > 65 &&
+            data.asa >= 3
+        ) {
+            addRequired(
+                "Renal function + electrolytes",
+                "Consider renal function and electrolyte assessment in patients with heart failure aged over 65 years and ASA III or higher undergoing minor surgery."
+            );
+        }
 
+        // ECG for all patients with heart failure
+        addRequired(
+            "ECG",
+            "Known heart failure: assess cardiac rhythm and baseline ECG before surgery."
+        );
+
+        // Echocardiography → new or worsening symptoms / decompensation
+        addAdvise(
+            "Echocardiography",
+            "Consider echocardiography if there are new or worsening heart failure symptoms, signs of decompensation, or suspected deterioration in cardiac function. Routine repeat echocardiography is not indicated in clinically stable patients."
+        );
+
+        // Grade 2 or 3 + poor/unknown functional capacity + age > 65
+        if (
+            (
+                data.normalizedGrade === "intermediate" ||
+                data.normalizedGrade === "major"
+            ) &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            ) &&
+            data.age > 65
+        ) {
+            addAdvise(
+                "BNP / NT-proBNP",
+                "Consider preoperative BNP or NT-proBNP measurement in patients aged over 65 years with heart failure undergoing intermediate or major surgery and having poor or unknown functional capacity, particularly when perioperative cardiovascular risk is elevated and the result may influence management."
+            );
+        }
+
+        // Clinical assessment
+        addAction(
+            "Heart failure assessment",
+            "Assess current symptoms, volume status, signs of decompensation, functional capacity, recent hospitalizations, renal function, electrolytes, and current heart failure medications. If heart failure is decompensated, arrange further evaluation and optimization before elective surgery."
+        );
+    }
 }
 
 
