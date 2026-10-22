@@ -570,7 +570,7 @@ function R005_kidney() {
 // HEART FAILURE + ELECTROLYTES
 // ============================================================
 
-function R019_HeartFailure() {
+function R006_heartFailure() {
 
     if (data.heartFailure) {
 
