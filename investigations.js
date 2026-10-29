@@ -1762,12 +1762,12 @@ function R026_liver() {
 
         if (data.normalizedGrade === "mild") {
 
-            addRequired(
+            addAdvise(
                 "CBC",
                 "Liver disease with mild surgery."
             );
 
-            addRequired(
+            addAdvise(
                 "Renal function + electrolytes",
                 "Liver disease with mild surgery."
             );
@@ -1788,16 +1788,16 @@ function R026_liver() {
 
             addRequired(
                 "CBC",
-                "Liver disease with intermediate surgery."
+                "Liver disease with intermediate surgery.
             );
 
             addRequired(
                 "Renal function + electrolytes",
                 "Liver disease with intermediate surgery."
             );
-
-            addAdvise(
-                "LFT",
+ 
+            addRequired(
+                "LFT+Bilirubin",
                 "Consider liver function assessment in patients with liver disease undergoing intermediate surgery."
             );
 
@@ -1825,12 +1825,12 @@ function R026_liver() {
                 "Liver disease with major surgery."
             );
 
-            addAdvise(
-                "LFT",
+            addRequired(
+                "LFT+Bilirubin",
                 "Consider liver function assessment in patients with liver disease undergoing major surgery."
             );
 
-            addAdvise(
+            addRequired(
                 "PT / PTT / INR",
                 "Consider coagulation testing in patients with chronic liver disease undergoing major surgery."
             );
