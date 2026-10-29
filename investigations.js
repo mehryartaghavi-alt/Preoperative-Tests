@@ -1738,6 +1738,7 @@ addAction(
 // LIVER DISEASE
 // ============================================================
 
+
 function R026_liver() {
 
     if (data.liver) {
@@ -1755,7 +1756,6 @@ function R026_liver() {
 
         }
 
-
         // ----------------------------------------------------
         // Mild surgery
         // ----------------------------------------------------
@@ -1764,21 +1764,20 @@ function R026_liver() {
 
             addAdvise(
                 "CBC",
-                "Liver disease with mild surgery."
+                "Consider CBC based on clinical assessment and patient-related risk factors."
             );
 
             addAdvise(
                 "Renal function + electrolytes",
-                "Liver disease with mild surgery."
+                "Consider renal function and electrolyte testing based on clinical assessment and patient-related risk factors."
             );
 
             addAdvise(
                 "LFT",
-                "Consider liver function assessment in patients with liver disease undergoing mild surgery."
+                "Consider liver function assessment based on clinical status and availability of recent results."
             );
 
         }
-
 
         // ----------------------------------------------------
         // Intermediate surgery
@@ -1788,26 +1787,25 @@ function R026_liver() {
 
             addRequired(
                 "CBC",
-                "Liver disease with intermediate surgery.
+                "Liver disease with intermediate surgery."
             );
 
             addRequired(
                 "Renal function + electrolytes",
                 "Liver disease with intermediate surgery."
             );
- 
+
             addRequired(
                 "LFT+Bilirubin",
-                "Consider liver function assessment in patients with liver disease undergoing intermediate surgery."
+                "Assess liver function and bilirubin before intermediate surgery."
             );
 
             addAdvise(
                 "PT / PTT / INR",
-                "Consider coagulation testing in patients with chronic liver disease undergoing intermediate surgery."
+                "Consider coagulation assessment based on liver disease severity and clinical context."
             );
 
         }
-
 
         // ----------------------------------------------------
         // Major surgery
@@ -1827,17 +1825,18 @@ function R026_liver() {
 
             addRequired(
                 "LFT+Bilirubin",
-                "Consider liver function assessment in patients with liver disease undergoing major surgery."
+                "Assess liver function and bilirubin before major surgery."
             );
 
             addRequired(
                 "PT / PTT / INR",
-                "Consider coagulation testing in patients with chronic liver disease undergoing major surgery."
+                "Review coagulation parameters as part of the preoperative assessment."
             );
 
         }
 
     }
+}
 
 }// ============================================================
 // RULE R027
