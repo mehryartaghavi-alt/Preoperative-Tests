@@ -1747,7 +1747,7 @@ function R026_liver() {
         // Minor surgery
         // ----------------------------------------------------
 
-        if (data.normalizedGrade === "minimal") {
+        if (data.grade === "minimal") {
 
             addAdvise(
                 "CBC",
@@ -1760,7 +1760,7 @@ function R026_liver() {
         // Mild surgery
         // ----------------------------------------------------
 
-        if (data.normalizedGrade === "mild") {
+        if (data.grade === "mild") {
 
             addAdvise(
                 "CBC",
