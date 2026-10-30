@@ -1747,7 +1747,7 @@ function R026_liver() {
         // Minor surgery
         // ----------------------------------------------------
 
-        if (data.normalizedGrade === "minor") {
+        if (data.normalizedGrade === "minimal") {
 
             addAdvise(
                 "CBC",
