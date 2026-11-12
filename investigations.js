@@ -2329,7 +2329,7 @@ const rules = [
     R010_anemia,
     R011_bloodLoss,
     R013_thoracic,
-    R014_copdAsthmaAction,
+    R014_copdAsthma,
     R015_obesityOSA,
     R016_bariatric,
     R017_CAD,
