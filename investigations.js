@@ -926,7 +926,7 @@ function R013_thoracic() {
 }
 // ============================================================
 // RULE R014
-// UNCONTROLLED / EXACERBATED RESPIRATORY DISEASE
+// COPD / Asthma DISEASE
 // ============================================================
 //
 // This rule does NOT infer uncontrolled disease from ASA.
@@ -1011,6 +1011,99 @@ function R014_copdAsthma() {
     }
 
 }
+// ============================================================
+// RULE R014
+// ILD / ARDS and Respiratory failure
+// ============================================================
+function R014_5_ildArds() {
+
+    if (data.ildArds) {
+
+        // Respiratory assessment for major surgery
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major"
+        ) {
+
+            addAction(
+                "Respiratory consultation",
+                " Consider in patients with severe or progressive ILD, reduced DLCO, chronic respiratory failure, home oxygen use, or suspected pulmonary hypertension."
+            );
+
+            if (data.urgency === "elective") {
+
+                addAction(
+                    "Optimize respiratory condition before elective surgery",
+                    "Elective major surgery may need postponement when active respiratory disease is not adequately controlled."
+                );
+
+            }
+        }
+
+
+        // Spirometry
+        if (
+            data.normalizedGrade === "intermediate" ||
+            data.normalizedGrade === "major" ||
+            data.mets === "poor" ||
+            data.mets === "unknown"
+        ) {
+
+            addAdvise(
+                " pulmonary function testing ",
+                " Consider pulmonary function testing including spirometry, lung volumes (TLC), and DLCO when respiratory function is unknown, symptoms are worsening, or results may affect perioperative management."
+            );
+            addAdvise(
+                "6-minute walk test",
+                "Consider six-minute walk testing to assess exercise capacity and exertional oxygen desaturation, particularly in moderate to severe ILD."
+            );
+            addAdvise(
+                "High-resolution CT (HRCT)",
+                "Consider HRCT when ILD diagnosis or disease progression requires further evaluation and the result may affect clinical management."
+            );
+            addAdvise(
+                "Echocardiography",
+                "Consider echocardiography when pulmonary hypertension or right ventricular dysfunction is suspected."
+            );
+
+        }
+
+
+        // Chest X-ray
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major"
+        ) {
+
+            addAdvise(
+                "Chest X-ray",
+                "Not routine, Consider chest X-ray when new or worsening respiratory symptoms, abnormal lung examination, suspected infection, or unexplained hypoxemia are present."
+            );
+
+        }
+
+
+        // ABG
+        if (
+            data.asa >= 3 &&
+            data.normalizedGrade === "major" &&
+            (
+                data.mets === "poor" ||
+                data.mets === "unknown"
+            )
+        ) {
+
+            addAdvise(
+                "ABG",
+                " Consider ABG when significant hypoxemia, suspected hypercapnia, or respiratory failure is present."
+            );
+
+        }
+
+    }
+
+}
+
 // ============================================================
 // RULE R015
 // OBESITY / OSA
@@ -2330,6 +2423,7 @@ const rules = [
     R011_bloodLoss,
     R013_thoracic,
     R014_copdAsthma,
+    R014_5_ildArds
     R015_obesityOSA,
     R016_bariatric,
     R017_CAD,
