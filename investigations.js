@@ -935,9 +935,9 @@ function R013_thoracic() {
 // assuming uncontrolled status.
 // ============================================================
 
-function R014_respiratoryAction() {
+function R014_copd&asthmaAction() {
 
-    if (data.respiratory) {
+    if (data.copd&asthma) {
 
         // Respiratory assessment for major surgery
         if (
