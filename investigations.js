@@ -935,7 +935,7 @@ function R013_thoracic() {
 // assuming uncontrolled status.
 // ============================================================
 
-function R014_copdAsthmaAction() {
+function R014_copdAsthma() {
 
     if (data.copdAsthma) {
 
