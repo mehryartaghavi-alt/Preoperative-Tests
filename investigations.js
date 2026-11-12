@@ -129,7 +129,7 @@ herbal: !!medications.herbal,
 //
 // ============================================================
 
-function normalizeGrade(grade) {
+function normalizeGrade(grade) {    
 
     switch (grade) {
 
@@ -947,7 +947,7 @@ function R014_copdAsthma() {
 
             addAction(
                 "Respiratory consultation",
-                "Consider pulmonary consultation when respiratory disease is clinically significant or inadequately optimized."
+                "If FEV1 is below 50% predicted, with hypoxemia and new or worsening respiratory symptoms."
             );
 
             if (data.urgency === "elective") {
@@ -985,7 +985,7 @@ function R014_copdAsthma() {
 
             addAdvise(
                 "Chest X-ray",
-                "Consider chest X-ray when clinically indicated in patients with significant respiratory disease undergoing major surgery."
+                "Not routine, just in the presence of worsening symptoms and active respiratory disease."
             );
 
         }
@@ -1003,7 +1003,7 @@ function R014_copdAsthma() {
 
             addAdvise(
                 "ABG",
-                "Consider arterial blood gas analysis when severe respiratory impairment, hypoxemia, or hypercapnia is suspected."
+                "If severe respiratory impairment, hypoxemia, SpO2<93%, or hypercapnia is suspected."
             );
 
         }
