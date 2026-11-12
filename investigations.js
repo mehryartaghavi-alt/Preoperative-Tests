@@ -2557,6 +2557,7 @@ document.getElementById("resultSurgicalType").textContent =
         ckd: "CKD",
         liver: "Liver disease",
         copdAsthma: "COPD & Asthma",
+        ildArds: "ILD & ARDS",
         smoking: "Smoking",
         cva: "CVA",
         thyroid: "Thyroid disease",
