@@ -70,8 +70,8 @@ const data = {
     valvular: !!comorbidities.valvular,
     ckd: !!comorbidities.ckd,
     liver: !!comorbidities.liver,
-    copd&asthma: !!comorbidities.copd&asthma,
-    ild&ards: !!comorbidities.ild&ards,
+    copdAsthma: !!comorbidities.copdAsthma,
+    ildArds: !!comorbidities.ildArds,
     smoking: !!comorbidities.smoking,
     cva: !!comorbidities.cva,
     thyroid: !!comorbidities.thyroid,
@@ -935,9 +935,9 @@ function R013_thoracic() {
 // assuming uncontrolled status.
 // ============================================================
 
-function R014_copd&asthmaAction() {
+function R014_copdAsthmaAction() {
 
-    if (data.copd&asthma) {
+    if (data.copdAsthma) {
 
         // Respiratory assessment for major surgery
         if (
